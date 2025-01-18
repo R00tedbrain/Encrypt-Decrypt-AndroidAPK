@@ -1,4 +1,4 @@
-om.encrypt.bwt 🔐
+Com.encrypt.bwt 🔐
 
 ¡Bienvenido a com.encrypt.bwt! Esta es una aplicación de cifrado y descifrado para Android que te permite:
 
