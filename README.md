@@ -73,4 +73,5 @@ Personalización ✨
     Implementa tu propia seguridad adicional (por ejemplo, un PIN para proteger el acceso a “Manage Keys”).
 
 Licencia 📜
-MO SE PUEDE COMPIAR EL CODIGO SIN DAR REFERENCIA Y SOLICITAR AUTORIAZCION
+
+    MO SE PUEDE COMPIAR EL CODIGO SIN DAR REFERENCIA Y SOLICITAR AUTORIAZCION
