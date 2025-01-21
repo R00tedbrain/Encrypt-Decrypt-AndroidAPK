@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.encrypt.bwt"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permiso de Cámara para escanear QR -->
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Encryption">
+
+        <!-- Actividad principal de tu app -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Actividad para ENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+        <activity
+            android:name=".EncryptProcessActivity"
+            android:label="@string/action_encrypt_label"
+            android:exported="true"
+            tools:ignore="AppLinkUrlError">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Actividad para DESENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+        <activity
+            android:name=".DecryptProcessActivity"
+            android:label="@string/action_decrypt_label"
+            android:exported="true"
+            tools:ignore="AppLinkUrlError">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ACTIVIDAD para ENCRIPTAR al COMPARTIR (ACTION_SEND) -->
+        <activity
+            android:name=".EncryptShareActivity"
+            android:label="@string/share_encrypt_label"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ACTIVIDAD para DESENCRIPTAR al COMPARTIR (ACTION_SEND) -->
+        <activity
+            android:name=".DecryptShareActivity"
+            android:label="@string/share_decrypt_label"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+
+        <!-- IMPORTANTE: NUEVA ImportKeyActivity -->
+        <activity
+            android:name=".ImportKeyActivity"
+            android:label="@string/import_key_from_qr"
+            android:exported="true" />
+
+        <!-- Activity para administrar las claves (KeyManagerActivity) -->
+        <activity
+            android:name=".KeyManagerActivity"
+            android:label="@string/manage_keys_title"
+            android:exported="true">
+        </activity>
+
+        <!-- NUEVA: Activity para escanear QR (QrScannerActivity) -->
+        <activity
+            android:name=".QrScannerActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

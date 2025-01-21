@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Tema principal de la app -->
+    <style name="Theme.Encryption" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <!-- Lo que quieras agregar a tu tema -->
+    </style>
+
+    <!-- Spinner cerrado con texto blanco -->
+    <style name="MySpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <!-- Texto blanco cuando no está desplegado -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- Fondo blanco al desplegarse -->
+        <item name="android:popupBackground">@android:color/white</item>
+        <!-- Usamos un estilo con texto negro para la lista -->
+        <item name="android:spinnerDropDownItemStyle">@style/MySpinnerDropDownItemStyle</item>
+    </style>
+
+    <!-- Ítems de la lista con texto negro -->
+    <style name="MySpinnerDropDownItemStyle" parent="@android:style/Widget.Holo.ListView">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+</resources>
