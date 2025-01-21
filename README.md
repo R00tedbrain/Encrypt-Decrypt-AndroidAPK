@@ -1,4 +1,5 @@
-![Screenshot-20250121-113028](https://github.com/user-attachments/assets/f688d3f8-7e7a-4443-9579-ac10b1e1721f)
+![Diseño sin título (75)](https://github.com/user-attachments/assets/c2015c6d-5fa4-4134-8860-c29ea4470b3a)
+
 Com.encrypt.bwt 🔐
 
 ¡Bienvenido a com.encrypt.bwt! Esta es una aplicación de cifrado y descifrado para Android que te permite:
