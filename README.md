@@ -18,21 +18,7 @@ Características 🛠️
     Soporte de minSdk=26 y targetSdk=34.
     Multilenguaje (en strings.xml) con soporte para traducciones adicionales.
 
-Estructura del proyecto 📂
 
-    MainActivity.kt
-        Pantalla principal de la app. Permite introducir la clave manualmente o usar el botón Select Stored Key para cargar una clave guardada.
-        Botones: Encrypt, Decrypt, y Manage Keys.
-    KeyManagerActivity.kt
-        Gestiona el “diccionario de claves”. El usuario puede agregar un apodo + clave o eliminar con un LongClick.
-    EncryptProcessActivity.kt / DecryptProcessActivity.kt
-        Reciben texto mediante ACTION_PROCESS_TEXT (Chrome, Google Keep, etc.) y cifran/descifran mostrando un AlertDialog con el resultado.
-    EncryptShareActivity.kt / DecryptShareActivity.kt
-        Reciben texto mediante ACTION_SEND (“Compartir”) en apps que no usan “Procesar texto” (WhatsApp, Telegram…).
-    KeysRepository.kt
-        Maneja EncryptedSharedPreferences. Guarda las claves como JSON usando Gson, protegiéndolas con las APIs seguras de Android.
-    EncryptDecryptHelper.kt
-        Lógica de cifrado/descifrado. Aplica AES/ECB/PKCS5 o DES/ECB/PKCS5.
 
 Cómo instalar 📲
 
@@ -68,12 +54,10 @@ Dependencias y librerías ⚙️
     BouncyCastle (opcional; ejemplo de cifrado extra)
     Soporte para Jetpack Compose (opcional; si usas vistas tradicionales no es requerido).
 
-Personalización ✨
-
-    Cambia la UI (colores, estilos) en styles.xml, themes.xml y tu layout principal activity_main.xml.
-    Ajusta la lógica de AES y DES en EncryptDecryptHelper.kt (usar otro modo, como CBC, etc.).
-    Implementa tu propia seguridad adicional (por ejemplo, un PIN para proteger el acceso a “Manage Keys”).
 
 Licencia 📜
+## Licencia
 
-    MO SE PUEDE COMPIAR EL CODIGO SIN DAR REFERENCIA Y SOLICITAR AUTORIAZCION
+Este proyecto está licenciado bajo la [Licencia Pública General de GNU versión 3](https://www.gnu.org/licenses/gpl-3.0.es.html). 
+Por favor, revisa el archivo [LICENSE](./LICENSE) para obtener más información.
+
