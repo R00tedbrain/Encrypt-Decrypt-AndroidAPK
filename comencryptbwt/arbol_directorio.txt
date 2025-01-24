@@ -3,12 +3,12 @@
 │   ├── build.gradle.kts
 │   ├── proguard-rules.pro
 │   ├── release
-│   │   ├── app-release.apk
 │   │   ├── baselineProfiles
 │   │   │   ├── 0
 │   │   │   │   └── app-release.dm
 │   │   │   └── 1
 │   │   │       └── app-release.dm
+│   │   ├── encryptencryptQR100.apk
 │   │   └── output-metadata.json
 │   └── src
 │       ├── androidTest
@@ -29,10 +29,13 @@
 │       │   │               ├── EncryptDecryptHelper.kt
 │       │   │               ├── EncryptProcessActivity.kt
 │       │   │               ├── EncryptShareActivity.kt
+│       │   │               ├── ImportKeyActivity.kt
 │       │   │               ├── KeyItem.kt
 │       │   │               ├── KeyManagerActivity.kt
 │       │   │               ├── KeysRepository.kt
 │       │   │               ├── MainActivity.kt
+│       │   │               ├── QrScannerActivity.kt
+│       │   │               ├── QrUtils.kt
 │       │   │               └── ui
 │       │   │                   └── theme
 │       │   │                       ├── Color.kt
@@ -47,7 +50,6 @@
 │       │       │   ├── activity_key_manager.xml
 │       │       │   ├── activity_main.xml
 │       │       │   └── dialog_add_key.xml
-│       │       ├── mipmap-anydpi
 │       │       ├── mipmap-anydpi-v26
 │       │       │   ├── ic_launcher_round.xml
 │       │       │   └── ic_launcher.xml
@@ -87,6 +89,39 @@
 │                           └── ExampleUnitTest.kt
 ├── arbol_directorio.txt
 ├── build.gradle.kts
+├── fastlane
+│   └── metadata
+│       └── android
+│           ├── en-US
+│           │   ├── changelogs
+│           │   │   ├── 1.txt
+│           │   │   ├── 2.txt
+│           │   │   └── 3.txt
+│           │   ├── full_description.txt
+│           │   ├── images
+│           │   │   ├── icon.png
+│           │   │   └── phoneScreenshots
+│           │   │       ├── Screenshot-20250122-165001.png
+│           │   │       ├── Screenshot-20250122-165010.png
+│           │   │       ├── Screenshot-20250122-165013.png
+│           │   │       └── Screenshot-20250122-184737.png
+│           │   ├── short_description.txt
+│           │   └── title.txt
+│           └── es-ES
+│               ├── changelogs
+│               │   ├── 1.txt
+│               │   ├── 2.txt
+│               │   └── 3.txt
+│               ├── full_description.txt
+│               ├── images
+│               │   ├── icon.png
+│               │   └── phoneScreenshots
+│               │       ├── Screenshot-20250122-165001.png
+│               │       ├── Screenshot-20250122-165010.png
+│               │       ├── Screenshot-20250122-165013.png
+│               │       └── Screenshot-20250122-184737.png
+│               ├── short_description.txt
+│               └── title.txt
 ├── gradle
 │   ├── libs.versions.toml
 │   └── wrapper
@@ -98,4 +133,4 @@
 ├── local.properties
 └── settings.gradle.kts
 
-38 directories, 61 files
+48 directories, 86 files

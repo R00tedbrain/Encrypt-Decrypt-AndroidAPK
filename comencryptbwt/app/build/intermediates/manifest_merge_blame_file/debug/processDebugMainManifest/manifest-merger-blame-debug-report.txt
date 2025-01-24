@@ -1,0 +1,316 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.encrypt.bwt"
+4    android:versionCode="4"
+5    android:versionName="4" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <permission
+11-->[androidx.core:core:1.15.0] /home/f4ckbr4in/.gradle/caches/transforms-4/1edbe8c6930bf102c7e566c5f78e79ca/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+12        android:name="com.encrypt.bwt.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.15.0] /home/f4ckbr4in/.gradle/caches/transforms-4/1edbe8c6930bf102c7e566c5f78e79ca/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.15.0] /home/f4ckbr4in/.gradle/caches/transforms-4/1edbe8c6930bf102c7e566c5f78e79ca/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.encrypt.bwt.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.15.0] /home/f4ckbr4in/.gradle/caches/transforms-4/1edbe8c6930bf102c7e566c5f78e79ca/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.15.0] /home/f4ckbr4in/.gradle/caches/transforms-4/1edbe8c6930bf102c7e566c5f78e79ca/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+16    <uses-permission android:name="android.permission.CAMERA" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+16-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:22:5-65
+16-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:22:22-62
+17    <uses-feature
+17-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:25:5-27:36
+18        android:name="android.hardware.camera"
+18-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:26:9-47
+19        android:required="false" />
+19-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:27:9-33
+20    <uses-feature
+20-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:28:5-30:36
+21        android:name="android.hardware.camera.front"
+21-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:29:9-53
+22        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+22-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:30:9-33
+23    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+24    <uses-feature
+24-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:33:5-35:36
+25        android:name="android.hardware.camera.autofocus"
+25-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:34:9-57
+26        android:required="false" />
+26-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:35:9-33
+27    <uses-feature
+27-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:36:5-38:36
+28        android:name="android.hardware.camera.flash"
+28-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:37:9-53
+29        android:required="false" />
+29-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:38:9-33
+30    <uses-feature
+30-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:39:5-41:36
+31        android:name="android.hardware.screen.landscape"
+31-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:40:9-57
+32        android:required="false" />
+32-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:41:9-33
+33    <uses-feature
+33-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:42:5-44:36
+34        android:name="android.hardware.wifi"
+34-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:43:9-45
+35        android:required="false" /> <!-- Permiso de Cámara para escanear QR -->
+35-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
+36    <application
+36-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:10:5-96:19
+37        android:allowBackup="true"
+37-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:11:9-35
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.15.0] /home/f4ckbr4in/.gradle/caches/transforms-4/1edbe8c6930bf102c7e566c5f78e79ca/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+39        android:debuggable="true"
+40        android:extractNativeLibs="false"
+41        android:icon="@mipmap/ic_launcher"
+41-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:12:9-43
+42        android:label="@string/app_name"
+42-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:13:9-41
+43        android:roundIcon="@mipmap/ic_launcher_round"
+43-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:14:9-54
+44        android:supportsRtl="true"
+44-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:15:9-35
+45        android:theme="@style/Theme.Encryption" >
+45-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:16:9-48
+46
+47        <!-- Actividad principal de tu app -->
+48        <activity
+48-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:19:9-26:20
+49            android:name="com.encrypt.bwt.MainActivity"
+49-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:20:13-41
+50            android:exported="true" >
+50-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:21:13-36
+51            <intent-filter>
+51-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:22:13-25:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:23:17-68
+52-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:23:25-66
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:24:17-76
+54-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:24:27-74
+55            </intent-filter>
+56        </activity>
+57
+58        <!-- Actividad para ENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+59        <activity
+59-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:29:9-39:20
+60            android:name="com.encrypt.bwt.EncryptProcessActivity"
+60-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:30:13-51
+61            android:exported="true"
+61-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:32:13-36
+62            android:label="@string/action_encrypt_label" >
+62-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:31:13-57
+63            <intent-filter>
+63-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:34:13-38:29
+64                <action android:name="android.intent.action.PROCESS_TEXT" />
+64-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:35:17-76
+64-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:35:25-74
+65
+66                <category android:name="android.intent.category.DEFAULT" />
+66-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:17-75
+66-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:27-73
+67
+68                <data android:mimeType="text/plain" />
+68-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:17-54
+68-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:23-52
+69            </intent-filter>
+70        </activity>
+71
+72        <!-- Actividad para DESENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+73        <activity
+73-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:42:9-52:20
+74            android:name="com.encrypt.bwt.DecryptProcessActivity"
+74-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:43:13-51
+75            android:exported="true"
+75-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:45:13-36
+76            android:label="@string/action_decrypt_label" >
+76-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:44:13-57
+77            <intent-filter>
+77-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:34:13-38:29
+78                <action android:name="android.intent.action.PROCESS_TEXT" />
+78-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:35:17-76
+78-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:35:25-74
+79
+80                <category android:name="android.intent.category.DEFAULT" />
+80-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:17-75
+80-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:27-73
+81
+82                <data android:mimeType="text/plain" />
+82-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:17-54
+82-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:23-52
+83            </intent-filter>
+84        </activity>
+85
+86        <!-- ACTIVIDAD para ENCRIPTAR al COMPARTIR (ACTION_SEND) -->
+87        <activity
+87-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:55:9-64:20
+88            android:name="com.encrypt.bwt.EncryptShareActivity"
+88-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:56:13-49
+89            android:exported="true"
+89-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:58:13-36
+90            android:label="@string/share_encrypt_label" >
+90-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:57:13-56
+91            <intent-filter>
+91-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:59:13-63:29
+92                <action android:name="android.intent.action.SEND" />
+92-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:60:17-68
+92-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:60:25-66
+93
+94                <category android:name="android.intent.category.DEFAULT" />
+94-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:17-75
+94-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:27-73
+95
+96                <data android:mimeType="text/plain" />
+96-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:17-54
+96-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:23-52
+97            </intent-filter>
+98        </activity>
+99
+100        <!-- ACTIVIDAD para DESENCRIPTAR al COMPARTIR (ACTION_SEND) -->
+101        <activity
+101-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:67:9-76:20
+102            android:name="com.encrypt.bwt.DecryptShareActivity"
+102-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:68:13-49
+103            android:exported="true"
+103-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:70:13-36
+104            android:label="@string/share_decrypt_label" >
+104-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:69:13-56
+105            <intent-filter>
+105-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:59:13-63:29
+106                <action android:name="android.intent.action.SEND" />
+106-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:60:17-68
+106-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:60:25-66
+107
+108                <category android:name="android.intent.category.DEFAULT" />
+108-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:17-75
+108-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:36:27-73
+109
+110                <data android:mimeType="text/plain" />
+110-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:17-54
+110-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:37:23-52
+111            </intent-filter>
+112        </activity>
+113
+114        <!-- IMPORTANTE: NUEVA ImportKeyActivity -->
+115        <activity
+115-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:79:9-82:39
+116            android:name="com.encrypt.bwt.ImportKeyActivity"
+116-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:80:13-46
+117            android:exported="true"
+117-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:82:13-36
+118            android:label="@string/import_key_from_qr" />
+118-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:81:13-55
+119
+120        <!-- Activity para administrar las claves (KeyManagerActivity) -->
+121        <activity
+121-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:85:9-89:20
+122            android:name="com.encrypt.bwt.KeyManagerActivity"
+122-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:86:13-47
+123            android:exported="true"
+123-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:88:13-36
+124            android:label="@string/manage_keys_title" >
+124-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:87:13-54
+125        </activity>
+126
+127        <!-- NUEVA: Activity para escanear QR (QrScannerActivity) -->
+128        <activity
+128-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:92:9-94:40
+129            android:name="com.encrypt.bwt.QrScannerActivity"
+129-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:93:13-46
+130            android:exported="false" />
+130-->/home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/src/main/AndroidManifest.xml:94:13-37
+131        <activity
+131-->[androidx.compose.ui:ui-tooling-android:1.7.6] /home/f4ckbr4in/.gradle/caches/transforms-4/54643d346227fbd6a9ee3145ef324ba6/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+132            android:name="androidx.compose.ui.tooling.PreviewActivity"
+132-->[androidx.compose.ui:ui-tooling-android:1.7.6] /home/f4ckbr4in/.gradle/caches/transforms-4/54643d346227fbd6a9ee3145ef324ba6/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+133            android:exported="true" />
+133-->[androidx.compose.ui:ui-tooling-android:1.7.6] /home/f4ckbr4in/.gradle/caches/transforms-4/54643d346227fbd6a9ee3145ef324ba6/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+134
+135        <provider
+135-->[androidx.emoji2:emoji2:1.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/ba230f3c24dbc83fcc6098bcf6d1e388/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+136            android:name="androidx.startup.InitializationProvider"
+136-->[androidx.emoji2:emoji2:1.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/ba230f3c24dbc83fcc6098bcf6d1e388/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+137            android:authorities="com.encrypt.bwt.androidx-startup"
+137-->[androidx.emoji2:emoji2:1.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/ba230f3c24dbc83fcc6098bcf6d1e388/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+138            android:exported="false" >
+138-->[androidx.emoji2:emoji2:1.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/ba230f3c24dbc83fcc6098bcf6d1e388/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+139            <meta-data
+139-->[androidx.emoji2:emoji2:1.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/ba230f3c24dbc83fcc6098bcf6d1e388/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+140                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+140-->[androidx.emoji2:emoji2:1.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/ba230f3c24dbc83fcc6098bcf6d1e388/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+141                android:value="androidx.startup" />
+141-->[androidx.emoji2:emoji2:1.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/ba230f3c24dbc83fcc6098bcf6d1e388/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+142            <meta-data
+142-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/f4ckbr4in/.gradle/caches/transforms-4/312fe4428f2fe78ff3c40352afa88890/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+143                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+143-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/f4ckbr4in/.gradle/caches/transforms-4/312fe4428f2fe78ff3c40352afa88890/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+144                android:value="androidx.startup" />
+144-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/f4ckbr4in/.gradle/caches/transforms-4/312fe4428f2fe78ff3c40352afa88890/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+145            <meta-data
+145-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+146                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+146-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+147                android:value="androidx.startup" />
+147-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+148        </provider>
+149
+150        <activity
+150-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
+151            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+151-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
+152            android:clearTaskOnLaunch="true"
+152-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
+153            android:screenOrientation="sensorLandscape"
+153-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
+154            android:stateNotNeeded="true"
+154-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
+155            android:theme="@style/zxing_CaptureTheme"
+155-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
+156            android:windowSoftInputMode="stateAlwaysHidden" />
+156-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
+157
+158        <receiver
+158-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+159            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+159-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+160            android:directBootAware="false"
+160-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+161            android:enabled="true"
+161-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+162            android:exported="true"
+162-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+163            android:permission="android.permission.DUMP" >
+163-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+164            <intent-filter>
+164-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+165                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+165-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+165-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+166            </intent-filter>
+167            <intent-filter>
+167-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+168                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+168-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+168-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+169            </intent-filter>
+170            <intent-filter>
+170-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+171                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+171-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+171-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+172            </intent-filter>
+173            <intent-filter>
+173-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+174                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+174-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+174-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/f4ckbr4in/.gradle/caches/transforms-4/114ecc33ff20b3b64e659d0381351d78/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+175            </intent-filter>
+176        </receiver>
+177    </application>
+178
+179</manifest>

@@ -1,0 +1,6 @@
+com.encrypt.bwt.test.app-tracing-1.2.0-0 /home/f4ckbr4in/.gradle/caches/transforms-4/31d2c7f35cc958eafe311403c85bd6ed/transformed/tracing-1.2.0/res
+com.encrypt.bwt.test.app-core-1.6.1-1 /home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res
+com.encrypt.bwt.test.app-androidTest-2 /home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/build/generated/res/resValues/androidTest/debug
+com.encrypt.bwt.test.app-mergeDebugAndroidTestResources-3 /home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.encrypt.bwt.test.app-mergeDebugAndroidTestResources-4 /home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.encrypt.bwt.test.app-debugAndroidTest-5 /home/f4ckbr4in/AndroidStudioProjects/Encrypt-Decrypt-AndroidAPK/comencryptbwt/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

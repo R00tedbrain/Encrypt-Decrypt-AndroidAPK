@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.encrypt.bwt.app-mergeDebugResources-61:/layout/activity_key_manager.xml",
+        "source": "com.encrypt.bwt.app-main-64:/layout/activity_key_manager.xml"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-mergeDebugResources-61:/layout/activity_main.xml",
+        "source": "com.encrypt.bwt.app-main-64:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-mergeDebugResources-61:/layout/dialog_add_key.xml",
+        "source": "com.encrypt.bwt.app-main-64:/layout/dialog_add_key.xml"
+    }
+]
