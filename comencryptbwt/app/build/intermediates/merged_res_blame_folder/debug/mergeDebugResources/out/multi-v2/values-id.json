@@ -4,7 +4,7 @@
             "outputFile": "com.encrypt.bwt.app-mergeDebugResources-60:/values-id/values-id.xml",
             "map": [
                 {
-                    "source": "/home/f4ckbr4in/.gradle/caches/transforms-4/f1436030400d2ddf76a1a36092870ffe/transformed/zxing-android-embedded-4.3.0/res/values-id/values-id.xml",
+                    "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/cb5c2563a5402b83da07b69a0ebca0f6/transformed/zxing-android-embedded-4.3.0/res/values-id/values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

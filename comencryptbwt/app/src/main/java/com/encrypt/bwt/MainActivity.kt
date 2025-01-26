@@ -1,4 +1,4 @@
-//MainActivity
+// filename: MainActivity.kt
 package com.encrypt.bwt
 
 import android.content.Intent
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1) Configurar Spinner de cifrados
+        // 1) Configurar Spinner de cifrados (Incluimos AES, DES, CAMELLIA, CHACHA20POLY1305)
         val cipherTypes = resources.getStringArray(R.array.cipher_types)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cipherTypes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -44,14 +44,22 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val encryptedText = when (selectedCipher) {
-                "AES" -> EncryptDecryptHelper.encryptAES(plainText, secretKey)
-                "DES" -> EncryptDecryptHelper.encryptDES(plainText, secretKey)
-                else -> {
-                    Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
+            val encryptedText = try {
+                when (selectedCipher) {
+                    "AES" -> EncryptDecryptHelper.encryptAES(plainText, secretKey)
+                    "DES" -> EncryptDecryptHelper.encryptDES(plainText, secretKey)
+                    "CAMELLIA" -> EncryptDecryptHelper.encryptCamellia(plainText, secretKey)
+                    "CHACHA20POLY1305" -> EncryptDecryptHelper.encryptChaCha20Poly1305(plainText, secretKey)
+                    else -> {
+                        Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
+                        return@setOnClickListener
+                    }
                 }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                getString(R.string.encrypt_error_message)
             }
+
             binding.encryptedTextOutput.setText(encryptedText)
         }
 
@@ -65,14 +73,22 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val decryptedText = when (selectedCipher) {
-                "AES" -> EncryptDecryptHelper.decryptAES(cipherText, secretKey)
-                "DES" -> EncryptDecryptHelper.decryptDES(cipherText, secretKey)
-                else -> {
-                    Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
+            val decryptedText = try {
+                when (selectedCipher) {
+                    "AES" -> EncryptDecryptHelper.decryptAES(cipherText, secretKey)
+                    "DES" -> EncryptDecryptHelper.decryptDES(cipherText, secretKey)
+                    "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(cipherText, secretKey)
+                    "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(cipherText, secretKey)
+                    else -> {
+                        Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
+                        return@setOnClickListener
+                    }
                 }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                getString(R.string.decrypt_error_message)
             }
+
             binding.decryptedTextOutput.setText(decryptedText)
         }
 
@@ -81,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, KeyManagerActivity::class.java))
         }
 
-        // 5) Botón para “Select Stored Key”: mostrará diálogo con la lista de claves
+        // 5) Botón para “Select Stored Key”
         binding.selectKeyButton.setOnClickListener {
             pickStoredKey()
         }
@@ -99,7 +115,6 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        // Lista de apodos + “Enter a new key…”
         val nicknameList = keyItems.map { it.nickname }.toMutableList()
         val addNew = getString(R.string.add_new_key_option)
         nicknameList.add(addNew)

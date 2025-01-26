@@ -1,4 +1,4 @@
-//DecryptShareActivity
+// filename: DecryptShareActivity.kt
 package com.encrypt.bwt
 
 import android.content.ClipData
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 
 class DecryptShareActivity : AppCompatActivity() {
 
+    private var selectedCipher: String = "AES"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,15 +24,37 @@ class DecryptShareActivity : AppCompatActivity() {
             return
         }
 
-        askForKey { key ->
-            val decryptedText = try {
-                EncryptDecryptHelper.decryptAES(inputText, key)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                getString(R.string.decrypt_error_message)
+        // 1) Elegir tipo de cifrado
+        askForCipher { cipherChosen ->
+            selectedCipher = cipherChosen
+
+            // 2) Luego pedimos la clave
+            askForKey { key ->
+                val decryptedText = try {
+                    when (selectedCipher) {
+                        "AES" -> EncryptDecryptHelper.decryptAES(inputText, key)
+                        "DES" -> EncryptDecryptHelper.decryptDES(inputText, key)
+                        "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(inputText, key)
+                        "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(inputText, key)
+                        else -> getString(R.string.decrypt_error_message)
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    getString(R.string.decrypt_error_message)
+                }
+                showFinalDialog(decryptedText)
             }
-            showFinalDialog(decryptedText)
         }
+    }
+
+    private fun askForCipher(onCipherSelected: (String) -> Unit) {
+        val ciphers = arrayOf("AES", "DES", "CAMELLIA", "CHACHA20POLY1305")
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.choose_key_dialog_title))
+            .setItems(ciphers) { _, which ->
+                onCipherSelected(ciphers[which])
+            }
+            .show()
     }
 
     private fun askForKey(onKeyEntered: (String) -> Unit) {

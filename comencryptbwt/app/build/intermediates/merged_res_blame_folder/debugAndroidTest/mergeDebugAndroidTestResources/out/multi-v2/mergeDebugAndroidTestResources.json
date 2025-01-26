@@ -4,7 +4,7 @@
             "outputFile": "com.encrypt.bwt.test.app-debugAndroidTest-5:/values-v28_values-v28.arsc.flat",
             "map": [
                 {
-                    "source": "/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values-v28/values.xml",
+                    "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values-v28/values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
@@ -28,7 +28,7 @@
             "outputFile": "com.encrypt.bwt.test.app-debugAndroidTest-5:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values/values.xml",
+                    "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values/values.xml",
                     "from": {
                         "startLines": "4,11",
                         "startColumns": "0,0",
@@ -52,7 +52,7 @@
             "outputFile": "com.encrypt.bwt.test.app-debugAndroidTest-5:/values-v21_values-v21.arsc.flat",
             "map": [
                 {
-                    "source": "/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values-v21/values.xml",
+                    "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values-v21/values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",
@@ -76,7 +76,7 @@
             "outputFile": "com.encrypt.bwt.test.app-debugAndroidTest-5:/values-v18_values-v18.arsc.flat",
             "map": [
                 {
-                    "source": "/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values-v18/values.xml",
+                    "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values-v18/values.xml",
                     "from": {
                         "startLines": "4,12",
                         "startColumns": "0,0",

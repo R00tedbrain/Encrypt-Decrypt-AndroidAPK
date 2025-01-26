@@ -1,3 +1,4 @@
+// filename: KeyManagerActivity.kt
 package com.encrypt.bwt
 
 import android.content.Intent
@@ -116,6 +117,7 @@ class KeyManagerActivity : AppCompatActivity() {
     }
 
     private fun generateRandomKey() {
+        // Generamos 32 bytes aleatorios => 256 bits
         val randomBytes = ByteArray(32)
         SecureRandom().nextBytes(randomBytes)
         val base64Key = Base64.encodeToString(randomBytes, Base64.NO_WRAP)

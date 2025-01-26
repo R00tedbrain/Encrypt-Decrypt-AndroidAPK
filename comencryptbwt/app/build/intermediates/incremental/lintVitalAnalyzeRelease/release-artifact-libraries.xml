@@ -670,9 +670,9 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="org.bouncycastle:bcprov-jdk15on:1.70@jar"
-      jars="/home/f4ckbr4in/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.70/4636a0d01f74acaf28082fb62b317f1080118371/bcprov-jdk15on-1.70.jar"
-      resolved="org.bouncycastle:bcprov-jdk15on:1.70"/>
+      name="org.bouncycastle:bcprov-jdk18on:1.80@jar"
+      jars="/home/f4ckbr4in/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.80/e22100b41042decf09cab914a5af8d2c57b5ac4a/bcprov-jdk18on-1.80.jar"
+      resolved="org.bouncycastle:bcprov-jdk18on:1.80"/>
   <library
       name="androidx.security:security-crypto:1.1.0-alpha06@aar"
       jars="/home/f4ckbr4in/.gradle/caches/8.9/transforms/f2e0d9355dd722151a8e8774af5461a2/transformed/security-crypto-1.1.0-alpha06/jars/classes.jar"

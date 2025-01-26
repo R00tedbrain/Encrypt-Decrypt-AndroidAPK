@@ -1,3 +1,4 @@
+// filename: QrUtils.kt
 package com.encrypt.bwt
 
 import android.graphics.Bitmap

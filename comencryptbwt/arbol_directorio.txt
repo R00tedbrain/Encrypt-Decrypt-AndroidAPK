@@ -8,7 +8,7 @@
 │   │   │   │   └── app-release.dm
 │   │   │   └── 1
 │   │   │       └── app-release.dm
-│   │   ├── encryptencryptQR100.apk
+│   │   ├── Encrypt-Decrypt-V4.apk
 │   │   └── output-metadata.json
 │   └── src
 │       ├── androidTest

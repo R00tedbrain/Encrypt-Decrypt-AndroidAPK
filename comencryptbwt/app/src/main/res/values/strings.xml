@@ -27,7 +27,10 @@
     <string-array name="cipher_types">
         <item>AES</item>
         <item>DES</item>
-        <item>RSA</item>
+        <item>CAMELLIA</item>
+        <item>AEGIS256X4</item>
+        <item>CHACHA20POLY1305</item>
+        <item>XCHACHA20POLY1305</item>
     </string-array>
 
     <!-- Action labels para los Activities de encriptar/desencriptar -->

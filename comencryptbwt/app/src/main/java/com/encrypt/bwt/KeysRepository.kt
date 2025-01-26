@@ -1,4 +1,4 @@
-//KeysRepository
+// filename: KeysRepository.kt
 package com.encrypt.bwt
 
 import android.content.Context
@@ -36,6 +36,7 @@ object KeysRepository {
 
     fun addKey(context: Context, item: KeyItem) {
         val current = loadKeys(context)
+        // Reemplazamos la clave si el nickname ya existía
         current.removeAll { it.nickname == item.nickname }
         current.add(item)
         saveKeys(context, current)

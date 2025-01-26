@@ -37,7 +37,7 @@
 #    -keep class com.encrypt.bwt.** implements java.io.Serializable { *; }
 #    Pero en muchos casos GSON sigue funcionando si
 #    no usas reflection de campos private.
-#    Ajusta segun convenga.
+#    Ajusta según convenga.
 #--------------------------------------------------
 -keep class com.google.gson.** { *; }
 -dontwarn com.google.gson.**
@@ -54,7 +54,7 @@
 #--------------------------------------------------
 -dontwarn javax.crypto.**
 -dontwarn java.security.**
--dontwarn org.bouncycastle.**  # Por si usas BouncyCastle en otra parte
+-dontwarn org.bouncycastle.**
 
 #--------------------------------------------------
 # 6) Jetpack Compose (si tuvieras Compose).
@@ -68,9 +68,6 @@
 # 7) Remover logs de linea si lo deseas
 #    -renamesourcefileattribute SourceFile
 #    -keepattributes SourceFile,LineNumberTable
-#
-#    Queda a tu criterio.
-#    Podrías hacer la app más "opaca" para debugging.
 #--------------------------------------------------
 
 #--------------------------------------------------

@@ -1,3 +1,4 @@
+// filename: ImportKeyActivity.kt
 package com.encrypt.bwt
 
 import android.os.Bundle
@@ -42,7 +43,7 @@ class ImportKeyActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Nickname vacío, no se guardó la clave", Toast.LENGTH_SHORT).show()
                 }
-                finish()  // Cerrar ImportKeyActivity y regresar a KeyManagerActivity en el Back Stack
+                finish()
             }
             .setNegativeButton(R.string.cancel_button) { _, _ ->
                 finish()

@@ -1,13 +1,13 @@
+// build.gradle.kts (app)
+
 import java.io.ByteArrayOutputStream
 
-// Aplicamos los plugins sin versión,
-// pues ya están en el classpath vía 'buildscript' del proyecto raíz
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
 
-// Función para obtener el SHA corto del commit actual
+// Función para obtener el SHA corto del commit actual (opcional)
 fun getGitShaShort(): String {
     return try {
         val stdout = ByteArrayOutputStream()
@@ -32,7 +32,7 @@ android {
         minSdk = 26
         targetSdk = 35
         versionCode = 4
-        versionName = "4"
+        versionName = "5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -80,7 +80,7 @@ android {
 }
 
 dependencies {
-    // EJEMPLO: Findbugs
+    // Ejemplo: FindBugs
     implementation("com.google.code.findbugs:jsr305:3.0.2")
 
     // Core
@@ -98,8 +98,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     debugImplementation("androidx.compose.ui:ui-tooling:1.7.6")
 
-    // BouncyCastle
-    implementation("org.bouncycastle:bcprov-jdk15on:1.70")
+    // BouncyCastle (para ChaCha20-Poly1305)
+    implementation("org.bouncycastle:bcprov-jdk18on:1.80")
 
     // EncryptedSharedPreferences
     implementation("androidx.security:security-crypto:1.1.0-alpha06")

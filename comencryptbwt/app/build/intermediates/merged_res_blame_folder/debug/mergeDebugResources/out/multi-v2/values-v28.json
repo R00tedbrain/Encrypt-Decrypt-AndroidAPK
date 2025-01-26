@@ -4,7 +4,7 @@
             "outputFile": "com.encrypt.bwt.app-mergeDebugResources-60:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "/home/f4ckbr4in/.gradle/caches/transforms-4/9a5733b87b0330f1216f4600b0f12386/transformed/material-1.12.0/res/values-v28/values-v28.xml",
+                    "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/5316b27869ab62701439c30f8c8986c7/transformed/material-1.12.0/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/f4ckbr4in/.gradle/caches/transforms-4/89d6f6a3bd2702684b2123c0d1deaa1c/transformed/appcompat-1.7.0/res/values-v28/values-v28.xml",
+                    "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/caa5162e46eb491d902d1b3bcdd2d5ef/transformed/appcompat-1.7.0/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",

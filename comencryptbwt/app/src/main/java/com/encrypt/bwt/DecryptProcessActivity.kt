@@ -1,4 +1,4 @@
-//DecryptProcessActivity
+// filename: DecryptProcessActivity.kt
 package com.encrypt.bwt
 
 import android.content.ClipData
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 
 class DecryptProcessActivity : AppCompatActivity() {
 
+    private var selectedCipher: String = "AES" // Valor por defecto
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,15 +24,41 @@ class DecryptProcessActivity : AppCompatActivity() {
             return
         }
 
-        askForKey { userKey ->
-            val decrypted = try {
-                EncryptDecryptHelper.decryptAES(inputText, userKey)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                getString(R.string.decrypt_error_message)
+        // 1) Preguntamos qué cifrado usar
+        askForCipher { cipherChosen ->
+            selectedCipher = cipherChosen
+
+            // 2) Luego pedimos la clave
+            askForKey { userKey ->
+                // 3) Desencriptar según el cifrado escogido
+                val decrypted = try {
+                    when (selectedCipher) {
+                        "AES" -> EncryptDecryptHelper.decryptAES(inputText, userKey)
+                        "DES" -> EncryptDecryptHelper.decryptDES(inputText, userKey)
+                        "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(inputText, userKey)
+                        "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(inputText, userKey)
+                        else -> getString(R.string.decrypt_error_message)
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    getString(R.string.decrypt_error_message)
+                }
+                showFinalDialog(decrypted)
             }
-            showFinalDialog(decrypted)
         }
+    }
+
+    /**
+     * Pide al usuario elegir uno de los cifrados soportados.
+     */
+    private fun askForCipher(onCipherSelected: (String) -> Unit) {
+        val ciphers = arrayOf("AES", "DES", "CAMELLIA", "CHACHA20POLY1305")
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.choose_key_dialog_title)) // Reutilizamos string. Ajustar si quieres otro
+            .setItems(ciphers) { _, which ->
+                onCipherSelected(ciphers[which])
+            }
+            .show()
     }
 
     private fun askForKey(onKeyEntered: (String) -> Unit) {

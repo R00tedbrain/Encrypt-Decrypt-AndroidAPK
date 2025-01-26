@@ -4,8 +4,9 @@
     package="com.encrypt.bwt"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Permiso de Cámara para escanear QR -->
-
+    <!-- (Opcional) Permiso de Cámara para escanear QR:
+         <uses-permission android:name="android.permission.CAMERA" />
+     -->
 
     <application
         android:allowBackup="true"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.tracing:tracing:1.2.0$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/transforms-4/31d2c7f35cc958eafe311403c85bd6ed/transformed/tracing-1.2.0/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.tracing:tracing:1.2.0" from-dependency="true" generated-set="androidx.tracing:tracing:1.2.0$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/transforms-4/31d2c7f35cc958eafe311403c85bd6ed/transformed/tracing-1.2.0/res"><file path="/home/f4ckbr4in/.gradle/caches/transforms-4/31d2c7f35cc958eafe311403c85bd6ed/transformed/tracing-1.2.0/res/values/values.xml" qualifiers=""/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.test:core:1.6.1$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.test:core:1.6.1" from-dependency="true" generated-set="androidx.test:core:1.6.1$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res"><file path="/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values-v18/values.xml" qualifiers="v18"><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.tracing:tracing:1.2.0$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/1a3a6e7d70a93c0eb1c1c73cb9037bff/transformed/tracing-1.2.0/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.tracing:tracing:1.2.0" from-dependency="true" generated-set="androidx.tracing:tracing:1.2.0$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/1a3a6e7d70a93c0eb1c1c73cb9037bff/transformed/tracing-1.2.0/res"><file path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/1a3a6e7d70a93c0eb1c1c73cb9037bff/transformed/tracing-1.2.0/res/values/values.xml" qualifiers=""/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.test:core:1.6.1$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.test:core:1.6.1" from-dependency="true" generated-set="androidx.test:core:1.6.1$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res"><file path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values-v18/values.xml" qualifiers="v18"><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
 <item name="android:windowNoTitle">true</item>
 <item name="android:windowFullscreen">false</item>
 <item name="android:windowOverscan">true</item>
@@ -13,7 +13,7 @@
 <item name="android:fadingEdge">none</item>
 <item name="android:windowBackground">@android:color/white</item>
 <item name="android:windowAnimationStyle">@null</item>
-</style></file><file path="/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values-v21/values.xml" qualifiers="v21"><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
+</style></file><file path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values-v21/values.xml" qualifiers="v21"><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
 <item name="android:windowNoTitle">true</item>
 <item name="android:windowFullscreen">false</item>
 <item name="android:windowOverscan">true</item>
@@ -29,7 +29,7 @@
 <item name="android:windowBackground">@android:color/white</item>
 <item name="android:windowContentTransitions">false</item>
 <item name="android:windowAnimationStyle">@null</item>
-</style></file><file path="/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values/values.xml" qualifiers=""><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
+</style></file><file path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values/values.xml" qualifiers=""><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
 <item name="android:windowNoTitle">true</item>
 <item name="android:windowFullscreen">false</item>
 <item name="android:fadingEdge">none</item>
@@ -41,7 +41,7 @@
 <item name="android:fadingEdge">none</item>
 <item name="android:windowBackground">@android:color/white</item>
 <item name="android:windowAnimationStyle">@null</item>
-</style></file><file path="/home/f4ckbr4in/.gradle/caches/transforms-4/e3db3fa9177c229b732e763fd3a5f5cd/transformed/core-1.6.1/res/values-v28/values.xml" qualifiers="v28"><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Material.Dialog.NoActionBar">
+</style></file><file path="/home/f4ckbr4in/.gradle/caches/8.9/transforms/09e9f1df8afb5d55f73c4f350321d77b/transformed/core-1.6.1/res/values-v28/values.xml" qualifiers="v28"><style name="WhiteBackgroundDialogTheme" parent="@android:style/Theme.Material.Dialog.NoActionBar">
 <item name="android:windowNoTitle">true</item>
 <item name="android:windowFullscreen">false</item>
 <item name="android:windowOverscan">true</item>
