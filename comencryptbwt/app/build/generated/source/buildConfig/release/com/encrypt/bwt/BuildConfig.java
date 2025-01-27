@@ -8,7 +8,7 @@ public final class BuildConfig {
   public static final String APPLICATION_ID = "com.encrypt.bwt";
   public static final String BUILD_TYPE = "release";
   public static final int VERSION_CODE = 4;
-  public static final String VERSION_NAME = "5";
+  public static final String VERSION_NAME = "6";
   // Field from default config.
-  public static final String COMMIT_SHA = "e7c2ca4";
+  public static final String COMMIT_SHA = "78ba87e";
 }
