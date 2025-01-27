@@ -10,5 +10,5 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 4;
   public static final String VERSION_NAME = "5";
   // Field from default config.
-  public static final String COMMIT_SHA = "e5af88e";
+  public static final String COMMIT_SHA = "e7c2ca4";
 }
