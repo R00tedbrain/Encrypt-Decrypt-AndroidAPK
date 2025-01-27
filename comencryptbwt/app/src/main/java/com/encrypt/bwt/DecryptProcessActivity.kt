@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class DecryptProcessActivity : AppCompatActivity() {
 
-    private var selectedCipher: String = "AES" // Valor por defecto
+    private var selectedCipher: String = "AES"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +37,8 @@ class DecryptProcessActivity : AppCompatActivity() {
                         "DES" -> EncryptDecryptHelper.decryptDES(inputText, userKey)
                         "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(inputText, userKey)
                         "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(inputText, userKey)
+                        "XCHACHA20POLY1305" -> EncryptDecryptHelper.decryptXChaCha20Poly1305(inputText, userKey)
+                        "AEGIS256" -> EncryptDecryptHelper.decryptAegis256(inputText, userKey)
                         else -> getString(R.string.decrypt_error_message)
                     }
                 } catch (e: Exception) {
@@ -52,9 +54,16 @@ class DecryptProcessActivity : AppCompatActivity() {
      * Pide al usuario elegir uno de los cifrados soportados.
      */
     private fun askForCipher(onCipherSelected: (String) -> Unit) {
-        val ciphers = arrayOf("AES", "DES", "CAMELLIA", "CHACHA20POLY1305")
+        val ciphers = arrayOf(
+            "AES",
+            "DES",
+            "CAMELLIA",
+            "CHACHA20POLY1305",
+            "XCHACHA20POLY1305",
+            "AEGIS256"
+        )
         AlertDialog.Builder(this)
-            .setTitle(getString(R.string.choose_key_dialog_title)) // Reutilizamos string. Ajustar si quieres otro
+            .setTitle(getString(R.string.choose_key_dialog_title))
             .setItems(ciphers) { _, which ->
                 onCipherSelected(ciphers[which])
             }

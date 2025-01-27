@@ -36,6 +36,8 @@ class DecryptShareActivity : AppCompatActivity() {
                         "DES" -> EncryptDecryptHelper.decryptDES(inputText, key)
                         "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(inputText, key)
                         "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(inputText, key)
+                        "XCHACHA20POLY1305" -> EncryptDecryptHelper.decryptXChaCha20Poly1305(inputText, key)
+                        "AEGIS256" -> EncryptDecryptHelper.decryptAegis256(inputText, key)
                         else -> getString(R.string.decrypt_error_message)
                     }
                 } catch (e: Exception) {
@@ -48,7 +50,14 @@ class DecryptShareActivity : AppCompatActivity() {
     }
 
     private fun askForCipher(onCipherSelected: (String) -> Unit) {
-        val ciphers = arrayOf("AES", "DES", "CAMELLIA", "CHACHA20POLY1305")
+        val ciphers = arrayOf(
+            "AES",
+            "DES",
+            "CAMELLIA",
+            "CHACHA20POLY1305",
+            "XCHACHA20POLY1305",
+            "AEGIS256"
+        )
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.choose_key_dialog_title))
             .setItems(ciphers) { _, which ->
