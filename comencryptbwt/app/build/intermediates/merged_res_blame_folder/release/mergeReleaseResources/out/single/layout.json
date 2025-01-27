@@ -4,6 +4,10 @@
         "source": "com.encrypt.bwt.app-main-62:/layout/activity_main.xml"
     },
     {
+        "merged": "com.encrypt.bwt.app-mergeReleaseResources-59:/layout/activity_file_encryption.xml",
+        "source": "com.encrypt.bwt.app-main-62:/layout/activity_file_encryption.xml"
+    },
+    {
         "merged": "com.encrypt.bwt.app-mergeReleaseResources-59:/layout/dialog_add_key.xml",
         "source": "com.encrypt.bwt.app-main-62:/layout/dialog_add_key.xml"
     },

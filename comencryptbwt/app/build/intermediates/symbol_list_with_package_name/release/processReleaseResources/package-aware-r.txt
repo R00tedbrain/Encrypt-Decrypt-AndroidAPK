@@ -2113,6 +2113,7 @@ color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color purple_500
+color purple_700
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3184,6 +3185,7 @@ id accessibility_custom_action_8
 id accessibility_custom_action_9
 id actionDown
 id actionDownUp
+id actionRadioGroup
 id actionUp
 id action_bar
 id action_bar_activity_content
@@ -3237,9 +3239,14 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonAddKey
+id buttonFileEncryption
 id buttonGenerateRandom
 id buttonImportFromQR
 id buttonPanel
+id buttonPickFile
+id buttonPickKey
+id buttonPickOutputDir
+id buttonProcess
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3522,6 +3529,8 @@ id pressed
 id progress_circular
 id progress_horizontal
 id radio
+id radioDecrypt
+id radioEncrypt
 id ratio
 id rectangles
 id report_drawn
@@ -3575,6 +3584,7 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinnerCipher
 id spline
 id split_action_bar
 id spread
@@ -3612,7 +3622,11 @@ id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id text
 id text2
+id textChosenKey
 id textEnd
+id textOutputDir
+id textResult
+id textSelectedFile
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -3629,6 +3643,7 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
+id titleText
 id title_template
 id toggle
 id top
@@ -3798,6 +3813,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_file_encryption
 layout activity_key_manager
 layout activity_main
 layout custom_dialog

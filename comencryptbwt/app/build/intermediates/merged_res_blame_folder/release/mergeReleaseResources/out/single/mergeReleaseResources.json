@@ -2108,6 +2108,10 @@
         "source": "com.encrypt.bwt.app-material-1.12.0-19:/color/m3_hint_foreground.xml"
     },
     {
+        "merged": "com.encrypt.bwt.app-release-61:/layout_activity_file_encryption.xml.flat",
+        "source": "com.encrypt.bwt.app-main-62:/layout/activity_file_encryption.xml"
+    },
+    {
         "merged": "com.encrypt.bwt.app-release-61:/drawable_mtrl_switch_thumb_unchecked_checked.xml.flat",
         "source": "com.encrypt.bwt.app-material-1.12.0-19:/drawable/mtrl_switch_thumb_unchecked_checked.xml"
     },

@@ -1,50 +1,53 @@
-// filename: DecryptShareActivity.kt
 package com.encrypt.bwt
 
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.documentfile.provider.DocumentFile
 
 class DecryptShareActivity : AppCompatActivity() {
 
-    private var selectedCipher: String = "AES"
+    private var selectedCipher = "AES"
+    private var isFile = false
+    private var fileUri: Uri? = null
+    private var inputText: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Texto compartido
-        val inputText = intent?.getStringExtra(Intent.EXTRA_TEXT).orEmpty()
-        if (inputText.isEmpty()) {
-            showFinalDialog(getString(R.string.error_no_text_provided))
+        val clipText = intent?.getStringExtra(Intent.EXTRA_TEXT)
+        val clipUri = intent?.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+
+        if (clipText.isNullOrEmpty() && clipUri == null) {
+            showFinalDialog("No text or file to decrypt.")
             return
         }
 
-        // 1) Elegir tipo de cifrado
-        askForCipher { cipherChosen ->
-            selectedCipher = cipherChosen
+        // Detecta si se trata de archivo o texto
+        if (clipUri != null) {
+            isFile = true
+            fileUri = clipUri
+        } else {
+            isFile = false
+            inputText = clipText
+        }
 
-            // 2) Luego pedimos la clave
+        // Preguntar qué cifrado usar
+        askForCipher { cipher ->
+            selectedCipher = cipher
+            // Preguntar clave
             askForKey { key ->
-                val decryptedText = try {
-                    when (selectedCipher) {
-                        "AES" -> EncryptDecryptHelper.decryptAES(inputText, key)
-                        "DES" -> EncryptDecryptHelper.decryptDES(inputText, key)
-                        "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(inputText, key)
-                        "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(inputText, key)
-                        "XCHACHA20POLY1305" -> EncryptDecryptHelper.decryptXChaCha20Poly1305(inputText, key)
-                        "AEGIS256" -> EncryptDecryptHelper.decryptAegis256(inputText, key)
-                        else -> getString(R.string.decrypt_error_message)
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    getString(R.string.decrypt_error_message)
+                if (isFile) {
+                    decryptFile(fileUri!!, key, selectedCipher)
+                } else {
+                    decryptText(inputText!!, key, selectedCipher)
                 }
-                showFinalDialog(decryptedText)
             }
         }
     }
@@ -59,7 +62,7 @@ class DecryptShareActivity : AppCompatActivity() {
             "AEGIS256"
         )
         AlertDialog.Builder(this)
-            .setTitle(getString(R.string.choose_key_dialog_title))
+            .setTitle("Choose Cipher")
             .setItems(ciphers) { _, which ->
                 onCipherSelected(ciphers[which])
             }
@@ -69,24 +72,23 @@ class DecryptShareActivity : AppCompatActivity() {
     private fun askForKey(onKeyEntered: (String) -> Unit) {
         val keyItems = KeysRepository.loadKeys(this)
         if (keyItems.isEmpty()) {
-            askKeyManually { onKeyEntered(it) }
+            askKeyManually(onKeyEntered)
         } else {
             val nicknames = keyItems.map { it.nickname }.toMutableList()
-            val addNew = getString(R.string.add_new_key_option)
+            val addNew = "Enter a new key..."
             nicknames.add(addNew)
-
             AlertDialog.Builder(this)
-                .setTitle(getString(R.string.choose_key_dialog_title))
+                .setTitle("Choose a key")
                 .setItems(nicknames.toTypedArray()) { _, which ->
                     val selected = nicknames[which]
                     if (selected == addNew) {
-                        askKeyManually { onKeyEntered(it) }
+                        askKeyManually(onKeyEntered)
                     } else {
                         val item = keyItems.find { it.nickname == selected }
                         if (item != null) {
                             onKeyEntered(item.secret)
                         } else {
-                            askKeyManually { onKeyEntered(it) }
+                            askKeyManually(onKeyEntered)
                         }
                     }
                 }
@@ -95,43 +97,130 @@ class DecryptShareActivity : AppCompatActivity() {
     }
 
     private fun askKeyManually(callback: (String) -> Unit) {
-        val keyInput = EditText(this).apply {
-            hint = getString(R.string.hint_enter_key)
-        }
+        val edit = EditText(this)
+        edit.hint = "Enter decryption key"
 
         AlertDialog.Builder(this)
-            .setTitle(getString(R.string.enter_key_dialog_title))
-            .setView(keyInput)
-            .setPositiveButton(R.string.ok_button) { _, _ ->
-                val userKey = keyInput.text.toString().trim()
-                if (userKey.isNotEmpty()) {
-                    callback(userKey)
+            .setTitle("Enter Key")
+            .setView(edit)
+            .setPositiveButton("OK") { _, _ ->
+                val key = edit.text.toString().trim()
+                if (key.isNotEmpty()) {
+                    callback(key)
                 } else {
-                    showFinalDialog(getString(R.string.error_empty_key))
+                    showFinalDialog("Empty key.")
                 }
             }
-            .setNegativeButton(R.string.cancel_button) { _, _ -> finish() }
-            .setCancelable(false)
+            .setNegativeButton("Cancel") { _, _ ->
+                finish()
+            }
             .show()
     }
 
-    private fun showFinalDialog(resultText: String) {
+    // ---------------------------------------------
+    // Desencriptar TEXTO
+    // ---------------------------------------------
+    private fun decryptText(cipherText: String, key: String, cipher: String) {
+        val result = try {
+            when (cipher) {
+                "AES" -> EncryptDecryptHelper.decryptAES(cipherText, key)
+                "DES" -> EncryptDecryptHelper.decryptDES(cipherText, key)
+                "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(cipherText, key)
+                "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(cipherText, key)
+                "XCHACHA20POLY1305" -> EncryptDecryptHelper.decryptXChaCha20Poly1305(cipherText, key)
+                "AEGIS256" -> EncryptDecryptHelper.decryptAegis256(cipherText, key)
+                else -> "Cipher not implemented."
+            }
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+            "Error decrypting text: ${ex.message}"
+        }
+        showFinalDialog(result)
+    }
+
+    // ---------------------------------------------
+    // Desencriptar ARCHIVO
+    // ---------------------------------------------
+    private fun decryptFile(uri: Uri, key: String, cipher: String) {
+        // 1) Leer bytes
+        val data = FileHelper.readAllBytesFromUri(this, uri)
+        if (data == null) {
+            showFinalDialog("Error reading file.")
+            return
+        }
+
+        // 2) Desencriptar
+        val decrypted: ByteArray = try {
+            when (cipher) {
+                "AES" -> EncryptDecryptHelper.decryptBytesAES(data, key)
+                "DES" -> EncryptDecryptHelper.decryptBytesDES(data, key)
+                "CAMELLIA" -> EncryptDecryptHelper.decryptBytesCamellia(data, key)
+                "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptBytesChaCha20(data, key)
+                "XCHACHA20POLY1305" -> EncryptDecryptHelper.decryptBytesXChaCha20(data, key)
+                "AEGIS256" -> EncryptDecryptHelper.decryptBytesAegis256(data, key)
+                else -> {
+                    showFinalDialog("Cipher not implemented.")
+                    return
+                }
+            }
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+            showFinalDialog("Error decrypting file: ${ex.message}")
+            return
+        }
+
+        // 3) Construir nombre final:
+        //    - si termina en ".encrypted", lo quitamos. Si no, añadimos ".decrypted"
+        val originalName = FileHelper.getFilenameFromUri(this, uri) ?: "file"
+        val finalName = if (originalName.endsWith(".encrypted", ignoreCase = true)) {
+            originalName.removeSuffix(".encrypted")
+        } else {
+            "$originalName.decrypted"
+        }
+
+        // 4) Crear el nuevo archivo en la misma carpeta usando DocumentFile
+        val sourceDoc = DocumentFile.fromSingleUri(this, uri)
+        if (sourceDoc == null) {
+            showFinalDialog("Error: Could not access original file.")
+            return
+        }
+        val parentDoc = sourceDoc.parentFile
+        if (parentDoc == null) {
+            showFinalDialog("Error: No parent folder accessible.")
+            return
+        }
+        // Verificamos si se puede escribir:
+        if (!parentDoc.isDirectory || !parentDoc.canWrite()) {
+            showFinalDialog("Cannot write in original folder.")
+            return
+        }
+
+        // Si existía un archivo con el mismo nombre, lo borramos
+        parentDoc.findFile(finalName)?.delete()
+
+        val mimeType = "application/octet-stream"
+        val newFile = parentDoc.createFile(mimeType, finalName)
+        if (newFile == null) {
+            showFinalDialog("Failed to create output file.")
+            return
+        }
+
+        // 5) Escribimos
+        val success = FileHelper.writeAllBytesToUri(this, newFile.uri, decrypted)
+        if (!success) {
+            showFinalDialog("Error writing decrypted file.")
+            return
+        }
+
+        showFinalDialog("File decrypted successfully.\nSaved to:\n${newFile.uri}")
+    }
+
+    private fun showFinalDialog(msg: String) {
         AlertDialog.Builder(this)
-            .setTitle(getString(R.string.decrypted_text_title))
-            .setMessage(resultText)
-            .setPositiveButton(R.string.copy_button) { _, _ ->
-                copyToClipboard(resultText)
-                finish()
-            }
-            .setOnDismissListener {
-                finish()
-            }
+            .setTitle("Decrypt Share")
+            .setMessage(msg)
+            .setPositiveButton("OK") { _, _ -> finish() }
+            .setOnDismissListener { finish() }
             .show()
-    }
-
-    private fun copyToClipboard(text: String) {
-        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clip = ClipData.newPlainText("DecryptedText", text)
-        clipboard.setPrimaryClip(clip)
     }
 }

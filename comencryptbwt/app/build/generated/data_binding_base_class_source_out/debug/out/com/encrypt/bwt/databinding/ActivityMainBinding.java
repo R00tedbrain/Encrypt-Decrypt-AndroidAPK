@@ -27,6 +27,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ImageView backgroundImage;
 
   @NonNull
+  public final Button buttonFileEncryption;
+
+  @NonNull
   public final TextView cipherTypeLabel;
 
   @NonNull
@@ -72,16 +75,17 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button selectKeyButton;
 
   private ActivityMainBinding(@NonNull FrameLayout rootView, @NonNull ImageView backgroundImage,
-      @NonNull TextView cipherTypeLabel, @NonNull Spinner cipherTypeSpinner,
-      @NonNull Button decryptButton, @NonNull TextView decryptedTextLabel,
-      @NonNull EditText decryptedTextOutput, @NonNull Button encryptButton,
-      @NonNull EditText encryptedTextInput, @NonNull TextView encryptedTextLabel,
-      @NonNull EditText encryptedTextOutput, @NonNull Button manageKeysButton,
-      @NonNull EditText plainTextInput, @NonNull TextView plainTextLabel,
-      @NonNull EditText secretKeyInput, @NonNull TextView secretKeyLabel,
-      @NonNull Button selectKeyButton) {
+      @NonNull Button buttonFileEncryption, @NonNull TextView cipherTypeLabel,
+      @NonNull Spinner cipherTypeSpinner, @NonNull Button decryptButton,
+      @NonNull TextView decryptedTextLabel, @NonNull EditText decryptedTextOutput,
+      @NonNull Button encryptButton, @NonNull EditText encryptedTextInput,
+      @NonNull TextView encryptedTextLabel, @NonNull EditText encryptedTextOutput,
+      @NonNull Button manageKeysButton, @NonNull EditText plainTextInput,
+      @NonNull TextView plainTextLabel, @NonNull EditText secretKeyInput,
+      @NonNull TextView secretKeyLabel, @NonNull Button selectKeyButton) {
     this.rootView = rootView;
     this.backgroundImage = backgroundImage;
+    this.buttonFileEncryption = buttonFileEncryption;
     this.cipherTypeLabel = cipherTypeLabel;
     this.cipherTypeSpinner = cipherTypeSpinner;
     this.decryptButton = decryptButton;
@@ -129,6 +133,12 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.backgroundImage;
       ImageView backgroundImage = ViewBindings.findChildViewById(rootView, id);
       if (backgroundImage == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonFileEncryption;
+      Button buttonFileEncryption = ViewBindings.findChildViewById(rootView, id);
+      if (buttonFileEncryption == null) {
         break missingId;
       }
 
@@ -222,10 +232,11 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((FrameLayout) rootView, backgroundImage, cipherTypeLabel,
-          cipherTypeSpinner, decryptButton, decryptedTextLabel, decryptedTextOutput, encryptButton,
-          encryptedTextInput, encryptedTextLabel, encryptedTextOutput, manageKeysButton,
-          plainTextInput, plainTextLabel, secretKeyInput, secretKeyLabel, selectKeyButton);
+      return new ActivityMainBinding((FrameLayout) rootView, backgroundImage, buttonFileEncryption,
+          cipherTypeLabel, cipherTypeSpinner, decryptButton, decryptedTextLabel,
+          decryptedTextOutput, encryptButton, encryptedTextInput, encryptedTextLabel,
+          encryptedTextOutput, manageKeysButton, plainTextInput, plainTextLabel, secretKeyInput,
+          secretKeyLabel, selectKeyButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

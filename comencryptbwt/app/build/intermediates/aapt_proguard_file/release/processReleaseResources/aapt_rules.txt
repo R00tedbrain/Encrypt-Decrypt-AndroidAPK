@@ -5,6 +5,7 @@
 -keep class com.encrypt.bwt.DecryptShareActivity { <init>(); }
 -keep class com.encrypt.bwt.EncryptProcessActivity { <init>(); }
 -keep class com.encrypt.bwt.EncryptShareActivity { <init>(); }
+-keep class com.encrypt.bwt.FileEncryptionActivity { <init>(); }
 -keep class com.encrypt.bwt.ImportKeyActivity { <init>(); }
 -keep class com.encrypt.bwt.KeyManagerActivity { <init>(); }
 -keep class com.encrypt.bwt.MainActivity { <init>(); }

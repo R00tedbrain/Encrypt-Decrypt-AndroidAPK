@@ -16,6 +16,10 @@
         "source": "com.encrypt.bwt.app-main-64:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.encrypt.bwt.app-debug-62:/layout_activity_file_encryption.xml.flat",
+        "source": "com.encrypt.bwt.app-main-64:/layout/activity_file_encryption.xml"
+    },
+    {
         "merged": "com.encrypt.bwt.app-debug-62:/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "com.encrypt.bwt.app-main-64:/mipmap-xxxhdpi/ic_launcher.webp"
     },

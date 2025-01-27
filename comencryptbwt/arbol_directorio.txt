@@ -8,7 +8,7 @@
 │   │   │   │   └── app-release.dm
 │   │   │   └── 1
 │   │   │       └── app-release.dm
-│   │   ├── Encrypt-Decryptv5.apk
+│   │   ├── Encrypt-Decryptv7.apk
 │   │   └── output-metadata.json
 │   └── src
 │       ├── androidTest
@@ -35,6 +35,8 @@
 │       │   │               ├── EncryptDecryptHelper.kt
 │       │   │               ├── EncryptProcessActivity.kt
 │       │   │               ├── EncryptShareActivity.kt
+│       │   │               ├── FileEncryptionActivity.kt
+│       │   │               ├── FileHelper.kt
 │       │   │               ├── ImportKeyActivity.kt
 │       │   │               ├── KeyItem.kt
 │       │   │               ├── KeyManagerActivity.kt
@@ -54,6 +56,7 @@
 │       │       │   ├── ic_launcher_background.xml
 │       │       │   └── ic_launcher_foreground.xml
 │       │       ├── layout
+│       │       │   ├── activity_file_encryption.xml
 │       │       │   ├── activity_key_manager.xml
 │       │       │   ├── activity_main.xml
 │       │       │   └── dialog_add_key.xml
@@ -140,4 +143,4 @@
 ├── local.properties
 └── settings.gradle.kts
 
-49 directories, 92 files
+49 directories, 95 files

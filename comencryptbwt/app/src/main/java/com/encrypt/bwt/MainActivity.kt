@@ -1,3 +1,4 @@
+// MainActivity.kt
 package com.encrypt.bwt
 
 import android.content.Intent
@@ -51,10 +52,7 @@ class MainActivity : AppCompatActivity() {
                     "CHACHA20POLY1305" -> EncryptDecryptHelper.encryptChaCha20Poly1305(plainText, secretKey)
                     "XCHACHA20POLY1305" -> EncryptDecryptHelper.encryptXChaCha20Poly1305(plainText, secretKey)
                     "AEGIS256" -> EncryptDecryptHelper.encryptAegis256(plainText, secretKey)
-                    else -> {
-                        Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
-                        return@setOnClickListener
-                    }
+                    else -> "Cipher not implemented"
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -82,10 +80,7 @@ class MainActivity : AppCompatActivity() {
                     "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(cipherText, secretKey)
                     "XCHACHA20POLY1305" -> EncryptDecryptHelper.decryptXChaCha20Poly1305(cipherText, secretKey)
                     "AEGIS256" -> EncryptDecryptHelper.decryptAegis256(cipherText, secretKey)
-                    else -> {
-                        Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
-                        return@setOnClickListener
-                    }
+                    else -> "Cipher not implemented"
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -95,14 +90,20 @@ class MainActivity : AppCompatActivity() {
             binding.decryptedTextOutput.setText(decryptedText)
         }
 
-        // Botón para gestionar claves (KeyManagerActivity)
+        // Botón Manage Keys
         binding.manageKeysButton.setOnClickListener {
             startActivity(Intent(this, KeyManagerActivity::class.java))
         }
 
-        // Botón para seleccionar una clave guardada
+        // Botón Select Key
         binding.selectKeyButton.setOnClickListener {
             pickStoredKey()
+        }
+
+        // Botón nuevo: File Encryption
+        binding.buttonFileEncryption.setOnClickListener {
+            // Ir a la nueva actividad
+            startActivity(Intent(this, FileEncryptionActivity::class.java))
         }
     }
 

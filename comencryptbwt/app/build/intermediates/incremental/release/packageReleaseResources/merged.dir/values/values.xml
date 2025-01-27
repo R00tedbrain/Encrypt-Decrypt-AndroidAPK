@@ -10,6 +10,7 @@
     </string-array>
     <color name="hint_gray">#CCCCCC</color>
     <color name="purple_500">#9C27B0</color>
+    <color name="purple_700">#7B1FA2</color>
     <string name="action_decrypt_label">Decrypt with Key</string>
     <string name="action_encrypt_label">Encrypt with Key</string>
     <string name="add_key_button">Add Key</string>

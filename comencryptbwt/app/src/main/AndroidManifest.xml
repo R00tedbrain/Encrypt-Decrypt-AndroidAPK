@@ -4,9 +4,8 @@
     package="com.encrypt.bwt"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- (Opcional) Permiso de Cámara para escanear QR:
-         <uses-permission android:name="android.permission.CAMERA" />
-     -->
+    <!-- (Opcional) Permiso de Cámara si escaneas QR -->
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
 
     <application
         android:allowBackup="true"
@@ -16,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Encryption">
 
-        <!-- Actividad principal de tu app -->
+        <!-- Actividad principal -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -26,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad para ENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+        <!-- Para ENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
         <activity
             android:name=".EncryptProcessActivity"
             android:label="@string/action_encrypt_label"
@@ -39,7 +38,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad para DESENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+        <!-- Para DESENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
         <activity
             android:name=".DecryptProcessActivity"
             android:label="@string/action_decrypt_label"
@@ -52,7 +51,7 @@
             </intent-filter>
         </activity>
 
-        <!-- ACTIVIDAD para ENCRIPTAR al COMPARTIR (ACTION_SEND) -->
+        <!-- ENCRIPTAR al COMPARTIR (ACTION_SEND) => handle text/* y file/* -->
         <activity
             android:name=".EncryptShareActivity"
             android:label="@string/share_encrypt_label"
@@ -60,11 +59,18 @@
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+                <!-- Aceptar texto: -->
                 <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- Aceptar cualquier archivo: -->
+                <data android:mimeType="*/*"/>
             </intent-filter>
         </activity>
 
-        <!-- ACTIVIDAD para DESENCRIPTAR al COMPARTIR (ACTION_SEND) -->
+        <!-- DESENCRIPTAR al COMPARTIR (ACTION_SEND) => handle text/* y file/* -->
         <activity
             android:name=".DecryptShareActivity"
             android:label="@string/share_decrypt_label"
@@ -72,28 +78,39 @@
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+                <!-- Aceptar texto: -->
                 <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- Aceptar cualquier archivo: -->
+                <data android:mimeType="*/*"/>
             </intent-filter>
         </activity>
 
-        <!-- IMPORTANTE: NUEVA ImportKeyActivity -->
+        <!-- Import Key from QR -->
         <activity
             android:name=".ImportKeyActivity"
-            android:label="@string/import_key_from_qr"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/import_key_from_qr"/>
 
-        <!-- Activity para administrar las claves (KeyManagerActivity) -->
+        <!-- KeyManager -->
         <activity
             android:name=".KeyManagerActivity"
             android:label="@string/manage_keys_title"
-            android:exported="true">
-        </activity>
+            android:exported="true"/>
 
-        <!-- NUEVA: Activity para escanear QR (QrScannerActivity) -->
+        <!-- QrScannerActivity -->
         <activity
             android:name=".QrScannerActivity"
-            android:exported="false" />
+            android:exported="false"/>
 
+        <!-- NUEVO: Activity para manejo local de archivos -->
+        <activity
+            android:name=".FileEncryptionActivity"
+            android:label="File Encrypt/Decrypt"
+            android:exported="true"/>
     </application>
 
 </manifest>

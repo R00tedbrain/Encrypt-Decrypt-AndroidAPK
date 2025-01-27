@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Imagen de fondo con alpha para aclararla -->
+    <!-- Imagen de fondo con alpha -->
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background"
-        android:alpha="0.3" />
+        android:alpha="0.3"
+        android:src="@drawable/background" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                 android:textColorHint="@color/hint_gray"
                 android:background="?android:attr/editTextBackground" />
 
-            <!-- NUEVO BOTÓN: SELECT STORED KEY -->
+            <!-- BOTÓN: SELECT STORED KEY -->
             <Button
                 android:id="@+id/selectKeyButton"
                 android:layout_width="wrap_content"
@@ -83,8 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
-                android:layout_marginTop="4dp"
-                style="@style/MySpinnerStyle" />
+                android:layout_marginTop="4dp" />
 
             <!-- LABEL: Text to Encrypt -->
             <TextView
@@ -226,6 +225,18 @@
                 android:textSize="16sp"
                 android:textColorHint="@color/hint_gray"
                 android:background="?android:attr/editTextBackground" />
+
+            <!-- BOTÓN NUEVO: FILE ENCRYPTION -->
+            <Button
+                android:id="@+id/buttonFileEncryption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FILE ENCRYPTION"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_700"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
     </ScrollView>

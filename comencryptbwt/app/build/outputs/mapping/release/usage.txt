@@ -61,8 +61,6 @@ androidx.activity.ComponentActivity:
     public static synthetic void getOnBackPressedDispatcher$annotations()
     private static synthetic void getSavedStateRegistryController$annotations()
     public android.content.Context peekAvailableContext()
-    public final androidx.activity.result.ActivityResultLauncher registerForActivityResult(androidx.activity.result.contract.ActivityResultContract,androidx.activity.result.ActivityResultCallback)
-    public final androidx.activity.result.ActivityResultLauncher registerForActivityResult(androidx.activity.result.contract.ActivityResultContract,androidx.activity.result.ActivityResultRegistry,androidx.activity.result.ActivityResultCallback)
     public final void removeOnContextAvailableListener(androidx.activity.contextaware.OnContextAvailableListener)
     public final void removeOnNewIntentListener(androidx.core.util.Consumer)
     public final void removeOnUserLeaveHintListener(java.lang.Runnable)
@@ -185,12 +183,9 @@ androidx.activity.result.ActivityResultLauncher:
     public abstract androidx.activity.result.contract.ActivityResultContract getContract()
 androidx.activity.result.ActivityResultLauncherKt
 androidx.activity.result.ActivityResultRegistry$LifecycleContainer:
-    private final androidx.lifecycle.Lifecycle lifecycle
-    private final java.util.List observers
-    public void <init>(androidx.lifecycle.Lifecycle)
-    public final void addObserver(androidx.lifecycle.LifecycleEventObserver)
     public final androidx.lifecycle.Lifecycle getLifecycle()
-androidx.activity.result.ActivityResultRegistry$register$2
+androidx.activity.result.ActivityResultRegistry$register$2:
+    public androidx.activity.result.contract.ActivityResultContract getContract()
 androidx.activity.result.ActivityResultRegistry$register$3:
     public androidx.activity.result.contract.ActivityResultContract getContract()
 androidx.activity.result.ActivityResultRegistry:
@@ -200,8 +195,6 @@ androidx.activity.result.ActivityResultRegistry:
     private static final java.lang.String KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS
     private static final java.lang.String KEY_COMPONENT_ACTIVITY_REGISTERED_RCS
     private static final java.lang.String LOG_TAG
-    public final androidx.activity.result.ActivityResultLauncher register(java.lang.String,androidx.lifecycle.LifecycleOwner,androidx.activity.result.contract.ActivityResultContract,androidx.activity.result.ActivityResultCallback)
-    private static final void register$lambda$1(androidx.activity.result.ActivityResultRegistry,java.lang.String,androidx.activity.result.ActivityResultCallback,androidx.activity.result.contract.ActivityResultContract,androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event)
 androidx.activity.result.IntentSenderRequest$Builder$Flag
 androidx.activity.result.IntentSenderRequest$Builder:
     public void <init>(android.app.PendingIntent)
@@ -217,8 +210,6 @@ androidx.activity.result.contract.ActivityResultContracts$CreateDocument
 androidx.activity.result.contract.ActivityResultContracts$GetContent
 androidx.activity.result.contract.ActivityResultContracts$GetMultipleContents$Companion
 androidx.activity.result.contract.ActivityResultContracts$GetMultipleContents
-androidx.activity.result.contract.ActivityResultContracts$OpenDocument
-androidx.activity.result.contract.ActivityResultContracts$OpenDocumentTree
 androidx.activity.result.contract.ActivityResultContracts$OpenMultipleDocuments
 androidx.activity.result.contract.ActivityResultContracts$PickContact
 androidx.activity.result.contract.ActivityResultContracts$PickMultipleVisualMedia$Companion
@@ -1520,14 +1511,12 @@ androidx.appcompat.app.AlertDialog$Builder:
     public androidx.appcompat.app.AlertDialog$Builder setMultiChoiceItems(int,boolean[],android.content.DialogInterface$OnMultiChoiceClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setMultiChoiceItems(android.database.Cursor,java.lang.String,java.lang.String,android.content.DialogInterface$OnMultiChoiceClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setMultiChoiceItems(java.lang.CharSequence[],boolean[],android.content.DialogInterface$OnMultiChoiceClickListener)
-    public androidx.appcompat.app.AlertDialog$Builder setNegativeButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setNegativeButtonIcon(android.graphics.drawable.Drawable)
     public androidx.appcompat.app.AlertDialog$Builder setNeutralButton(int,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setNeutralButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setNeutralButtonIcon(android.graphics.drawable.Drawable)
     public androidx.appcompat.app.AlertDialog$Builder setOnCancelListener(android.content.DialogInterface$OnCancelListener)
     public androidx.appcompat.app.AlertDialog$Builder setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener)
-    public androidx.appcompat.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)
     public androidx.appcompat.app.AlertDialog$Builder setPositiveButtonIcon(android.graphics.drawable.Drawable)
     public androidx.appcompat.app.AlertDialog$Builder setRecycleOnMeasureEnabled(boolean)
     public androidx.appcompat.app.AlertDialog$Builder setSingleChoiceItems(int,int,android.content.DialogInterface$OnClickListener)
@@ -14865,11 +14854,52 @@ androidx.customview.widget.ViewDragHelper:
     public void setEdgeTrackingEnabled(int)
     public void setMinVelocity(float)
 androidx.documentfile.R
-androidx.documentfile.provider.DocumentFile
-androidx.documentfile.provider.DocumentsContractApi19
+androidx.documentfile.provider.DocumentFile:
+    static final java.lang.String TAG
+    public abstract boolean canRead()
+    public abstract androidx.documentfile.provider.DocumentFile createDirectory(java.lang.String)
+    public abstract boolean exists()
+    public static androidx.documentfile.provider.DocumentFile fromFile(java.io.File)
+    public abstract java.lang.String getType()
+    public static boolean isDocumentUri(android.content.Context,android.net.Uri)
+    public abstract boolean isFile()
+    public abstract boolean isVirtual()
+    public abstract long lastModified()
+    public abstract long length()
+    public abstract boolean renameTo(java.lang.String)
+androidx.documentfile.provider.DocumentsContractApi19:
+    private static final int FLAG_VIRTUAL_DOCUMENT
+    private static final java.lang.String TAG
+    private void <init>()
+    public static boolean canRead(android.content.Context,android.net.Uri)
+    public static boolean exists(android.content.Context,android.net.Uri)
+    public static long getFlags(android.content.Context,android.net.Uri)
+    public static java.lang.String getType(android.content.Context,android.net.Uri)
+    public static boolean isFile(android.content.Context,android.net.Uri)
+    public static boolean isVirtual(android.content.Context,android.net.Uri)
+    public static long lastModified(android.content.Context,android.net.Uri)
+    public static long length(android.content.Context,android.net.Uri)
 androidx.documentfile.provider.RawDocumentFile
-androidx.documentfile.provider.SingleDocumentFile
-androidx.documentfile.provider.TreeDocumentFile
+androidx.documentfile.provider.SingleDocumentFile:
+    public boolean canRead()
+    public androidx.documentfile.provider.DocumentFile createDirectory(java.lang.String)
+    public boolean exists()
+    public java.lang.String getType()
+    public boolean isFile()
+    public boolean isVirtual()
+    public long lastModified()
+    public long length()
+    public boolean renameTo(java.lang.String)
+androidx.documentfile.provider.TreeDocumentFile:
+    public boolean canRead()
+    public androidx.documentfile.provider.DocumentFile createDirectory(java.lang.String)
+    public boolean exists()
+    public java.lang.String getType()
+    public boolean isFile()
+    public boolean isVirtual()
+    public long lastModified()
+    public long length()
+    public boolean renameTo(java.lang.String)
 androidx.drawerlayout.R$attr
 androidx.drawerlayout.R$color
 androidx.drawerlayout.R$dimen
@@ -17477,6 +17507,10 @@ com.encrypt.bwt.EncryptDecryptHelper:
     private static final int KEY_SIZE_BITS
     private static final int PBKDF2_ITERATIONS
     private static final int SALT_SIZE
+com.encrypt.bwt.EncryptShareActivity:
+    private final void copyToClipboard(java.lang.String)
+com.encrypt.bwt.FileHelper:
+    public static final int $stable
 com.encrypt.bwt.ImportKeyActivity:
     public static final int $stable
     public static final java.lang.String EXTRA_KEY_SCANNED
@@ -17497,12 +17531,16 @@ com.encrypt.bwt.QrUtils:
 com.encrypt.bwt.R$color:
     public static int hint_gray
     public static int purple_500
+    public static int purple_700
 com.encrypt.bwt.R$drawable:
     public static int background
     public static int ic_launcher_background
     public static int ic_launcher_foreground
 com.encrypt.bwt.R$id:
+    public static int actionRadioGroup
     public static int layout_key_manager
+    public static int scroll
+    public static int titleText
 com.encrypt.bwt.R$mipmap:
     public static int ic_launcher
     public static int ic_launcher_foreground
@@ -17561,6 +17599,28 @@ com.encrypt.bwt.aegis.Aegis128L:
 com.encrypt.bwt.aegis.Aegis256:
     public static byte[] keygen()
     public static byte[] noncegen()
+com.encrypt.bwt.databinding.ActivityFileEncryptionBinding:
+    public final android.widget.RadioGroup actionRadioGroup
+    public final android.widget.Button buttonPickFile
+    public final android.widget.Button buttonPickKey
+    public final android.widget.Button buttonPickOutputDir
+    public final android.widget.Button buttonProcess
+    public final android.widget.RadioButton radioDecrypt
+    public final android.widget.RadioButton radioEncrypt
+    private final android.widget.ScrollView rootView
+    public final android.widget.ScrollView scroll
+    public final android.widget.Spinner spinnerCipher
+    public final android.widget.TextView textChosenKey
+    public final android.widget.TextView textOutputDir
+    public final android.widget.TextView textResult
+    public final android.widget.TextView textSelectedFile
+    public final android.widget.TextView titleText
+    private void <init>(android.widget.ScrollView,android.widget.RadioGroup,android.widget.Button,android.widget.Button,android.widget.Button,android.widget.Button,android.widget.RadioButton,android.widget.RadioButton,android.widget.ScrollView,android.widget.Spinner,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.TextView)
+    public static com.encrypt.bwt.databinding.ActivityFileEncryptionBinding bind(android.view.View)
+    public synthetic bridge android.view.View getRoot()
+    public android.widget.ScrollView getRoot()
+    public static com.encrypt.bwt.databinding.ActivityFileEncryptionBinding inflate(android.view.LayoutInflater)
+    public static com.encrypt.bwt.databinding.ActivityFileEncryptionBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean)
 com.encrypt.bwt.databinding.ActivityKeyManagerBinding:
     public final android.widget.Button buttonAddKey
     public final android.widget.Button buttonGenerateRandom
@@ -34668,7 +34728,26 @@ kotlin.internal.jdk8.JDK8PlatformImplementations:
     public kotlin.text.MatchGroup getMatchResultNamedGroup(java.util.regex.MatchResult,java.lang.String)
 kotlin.io.AccessDeniedException
 kotlin.io.ByteStreamsKt$iterator$1
-kotlin.io.ByteStreamsKt
+kotlin.io.ByteStreamsKt:
+    private static final java.io.BufferedInputStream buffered(java.io.InputStream,int)
+    private static final java.io.BufferedOutputStream buffered(java.io.OutputStream,int)
+    static synthetic java.io.BufferedInputStream buffered$default(java.io.InputStream,int,int,java.lang.Object)
+    static synthetic java.io.BufferedOutputStream buffered$default(java.io.OutputStream,int,int,java.lang.Object)
+    private static final java.io.BufferedReader bufferedReader(java.io.InputStream,java.nio.charset.Charset)
+    static synthetic java.io.BufferedReader bufferedReader$default(java.io.InputStream,java.nio.charset.Charset,int,java.lang.Object)
+    private static final java.io.BufferedWriter bufferedWriter(java.io.OutputStream,java.nio.charset.Charset)
+    static synthetic java.io.BufferedWriter bufferedWriter$default(java.io.OutputStream,java.nio.charset.Charset,int,java.lang.Object)
+    private static final java.io.ByteArrayInputStream byteInputStream(java.lang.String,java.nio.charset.Charset)
+    static synthetic java.io.ByteArrayInputStream byteInputStream$default(java.lang.String,java.nio.charset.Charset,int,java.lang.Object)
+    private static final java.io.ByteArrayInputStream inputStream(byte[])
+    private static final java.io.ByteArrayInputStream inputStream(byte[],int,int)
+    public static final kotlin.collections.ByteIterator iterator(java.io.BufferedInputStream)
+    public static final byte[] readBytes(java.io.InputStream,int)
+    public static synthetic byte[] readBytes$default(java.io.InputStream,int,int,java.lang.Object)
+    private static final java.io.InputStreamReader reader(java.io.InputStream,java.nio.charset.Charset)
+    static synthetic java.io.InputStreamReader reader$default(java.io.InputStream,java.nio.charset.Charset,int,java.lang.Object)
+    private static final java.io.OutputStreamWriter writer(java.io.OutputStream,java.nio.charset.Charset)
+    static synthetic java.io.OutputStreamWriter writer$default(java.io.OutputStream,java.nio.charset.Charset,int,java.lang.Object)
 kotlin.io.CloseableKt:
     private static final java.lang.Object use(java.io.Closeable,kotlin.jvm.functions.Function1)
 kotlin.io.ConsoleKt
@@ -36209,7 +36288,6 @@ kotlin.text.StringsKt__StringsKt:
     private static final java.lang.String removeRange(java.lang.String,int,int)
     private static final java.lang.String removeRange(java.lang.String,kotlin.ranges.IntRange)
     public static final java.lang.CharSequence removeSuffix(java.lang.CharSequence,java.lang.CharSequence)
-    public static final java.lang.String removeSuffix(java.lang.String,java.lang.CharSequence)
     public static final java.lang.CharSequence removeSurrounding(java.lang.CharSequence,java.lang.CharSequence)
     public static final java.lang.CharSequence removeSurrounding(java.lang.CharSequence,java.lang.CharSequence,java.lang.CharSequence)
     public static final java.lang.String removeSurrounding(java.lang.String,java.lang.CharSequence)
@@ -36450,7 +36528,6 @@ kotlin.text.StringsKt___StringsKt:
     private static final int sumOfUInt(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final long sumOfULong(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.lang.CharSequence take(java.lang.CharSequence,int)
-    public static final java.lang.String take(java.lang.String,int)
     public static final java.lang.CharSequence takeLast(java.lang.CharSequence,int)
     public static final java.lang.String takeLast(java.lang.String,int)
     public static final java.lang.CharSequence takeLastWhile(java.lang.CharSequence,kotlin.jvm.functions.Function1)
@@ -44949,12 +45026,6 @@ androidx.activity.ComponentActivity$ReportFullyDrawnExecutor
 androidx.activity.ComponentActivity$ReportFullyDrawnExecutorImpl:
     public static void activityDestroyed()
     public static void viewCreated()
-androidx.activity.ComponentActivity$activityResultRegistry$1$$InternalSyntheticLambda$2$0313431f184ded0190468893867673a495b8389884b233802485a072b0b052c0$0
-androidx.activity.ComponentActivity$activityResultRegistry$1$$InternalSyntheticLambda$2$0313431f184ded0190468893867673a495b8389884b233802485a072b0b052c0$1
-androidx.activity.ComponentActivity$activityResultRegistry$1:
-    public final synthetic androidx.activity.ComponentActivity this$0
-    public void <init>(androidx.fragment.app.FragmentActivity)
-    public final void onLaunch()
 androidx.activity.ComponentActivity$defaultViewModelProviderFactory$2:
     public static androidx.lifecycle.SavedStateViewModelFactory invoke()
 androidx.activity.ComponentActivity$fullyDrawnReporter$2$1:
@@ -44967,7 +45038,6 @@ androidx.activity.ComponentActivity:
     public static final androidx.activity.ComponentActivity$Companion Companion
     public int contentLayoutId
     public final kotlin.Lazy defaultViewModelProviderFactory$delegate
-    public final java.util.concurrent.atomic.AtomicInteger nextLocalRequestCode
     static void <clinit>()
     public static final void access$addObserverForBackInvoker(androidx.fragment.app.FragmentActivity,androidx.activity.OnBackPressedDispatcher)
     public abstract void addObserverForBackInvoker()
@@ -44979,6 +45049,7 @@ androidx.activity.ComponentActivity:
     public abstract void initializeViewTreeOwners()
     public abstract void invalidateMenu()
     public abstract java.lang.Object onRetainCustomNonConfigurationInstance()
+    public abstract androidx.activity.result.ActivityResultLauncher registerForActivityResult()
     public abstract void setContentView(int)
 androidx.activity.FullyDrawnReporter$$InternalSyntheticLambda$2$a343797b216b654af6e45b210590a59b008b0897ac1072415ad77f5c0c5544cc$0
 androidx.activity.FullyDrawnReporter:
@@ -45052,18 +45123,25 @@ androidx.activity.result.ActivityResult:
     public static final androidx.activity.result.ActivityResult$Companion Companion
     public static android.content.Intent getData()
     public static int getResultCode()
-androidx.activity.result.ActivityResultLauncher
+androidx.activity.result.ActivityResultLauncher:
+    public abstract void launch()
+    public abstract void launch(java.lang.Object)
+    public abstract void unregister()
 androidx.activity.result.ActivityResultRegistry$CallbackAndContract:
     public static androidx.activity.result.ActivityResultCallback getCallback()
     public static androidx.activity.result.contract.ActivityResultContract getContract()
 androidx.activity.result.ActivityResultRegistry$Companion
-androidx.activity.result.ActivityResultRegistry$LifecycleContainer
+androidx.activity.result.ActivityResultRegistry$LifecycleContainer:
+    public static void addObserver()
+    public static void clearObservers()
 androidx.activity.result.ActivityResultRegistry$generateRandomNumber$1:
     public static java.lang.Integer invoke()
+androidx.activity.result.ActivityResultRegistry$register$2:
+    public final void unregister()
 androidx.activity.result.ActivityResultRegistry$register$3:
     public final synthetic androidx.activity.result.contract.ActivityResultContract $contract
-    public static void launch()
-    public static void launch$1()
+    public final void launch(java.lang.Object)
+    public final void unregister()
 androidx.activity.result.ActivityResultRegistry:
     public static final androidx.activity.result.ActivityResultRegistry$Companion Companion
     static void <clinit>()
@@ -45071,35 +45149,43 @@ androidx.activity.result.ActivityResultRegistry:
     public abstract boolean dispatchResult()
     public abstract void doDispatch()
     public abstract int generateRandomNumber()
-    public abstract void onLaunch()
     public abstract void onRestoreInstanceState()
     public abstract void onSaveInstanceState()
-    public abstract void registerKey()
-    public abstract void unregister$activity_release()
+    public abstract androidx.activity.result.ActivityResultLauncher register()
 androidx.activity.result.ActivityResultRegistryOwner:
     public abstract androidx.activity.result.ActivityResultRegistry getActivityResultRegistry()
 androidx.activity.result.IntentSenderRequest$Builder
-androidx.activity.result.IntentSenderRequest$Companion$CREATOR$1
+androidx.activity.result.IntentSenderRequest$Companion$CREATOR$1:
+    public static androidx.activity.result.IntentSenderRequest createFromParcel()
+    public static androidx.activity.result.IntentSenderRequest[] newArray()
 androidx.activity.result.IntentSenderRequest$Companion
-androidx.activity.result.IntentSenderRequest
-androidx.activity.result.contract.ActivityResultContract$SynchronousResult
-androidx.activity.result.contract.ActivityResultContract:
-    public abstract android.content.Intent createIntent()
-    public abstract androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult()
+androidx.activity.result.IntentSenderRequest:
+    public static final androidx.activity.result.IntentSenderRequest$Companion Companion
+    public static android.content.Intent getFillInIntent()
+    public static int getFlagsMask()
+    public static int getFlagsValues()
+    public static android.content.IntentSender getIntentSender()
+androidx.activity.result.contract.ActivityResultContract$SynchronousResult:
+    public static java.lang.Object getValue()
+androidx.activity.result.contract.ActivityResultContracts$OpenDocument:
+    public final android.content.Intent createIntent()
+    public final androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult()
+    public final android.net.Uri parseResult()
+androidx.activity.result.contract.ActivityResultContracts$OpenDocumentTree:
+    public static android.content.Intent createIntent$1()
+    public static androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult$1()
+    public final android.net.Uri parseResult()
 androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions$Companion
 androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions:
     public static final androidx.activity.result.contract.ActivityResultContracts$RequestMultiplePermissions$Companion Companion
     static void <clinit>()
     public final android.content.Intent createIntent()
-    public static android.content.Intent createIntent$1()
     public final androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult()
-    public static androidx.activity.result.contract.ActivityResultContract$SynchronousResult getSynchronousResult$1()
     public static java.util.Map parseResult()
 androidx.activity.result.contract.ActivityResultContracts$StartActivityForResult$Companion
 androidx.activity.result.contract.ActivityResultContracts$StartActivityForResult:
     public static final androidx.activity.result.contract.ActivityResultContracts$StartActivityForResult$Companion Companion
     static void <clinit>()
-    public final android.content.Intent createIntent()
     public static android.content.Intent createIntent$2()
     public final androidx.activity.result.ActivityResult parseResult()
 androidx.appcompat.R$attr
@@ -45403,8 +45489,10 @@ androidx.appcompat.app.AlertDialog$Builder:
     public static androidx.appcompat.app.AlertDialog$Builder setCustomTitle()
     public static androidx.appcompat.app.AlertDialog$Builder setIcon()
     public static androidx.appcompat.app.AlertDialog$Builder setMessage()
+    public final void setNegativeButton(android.content.DialogInterface$OnClickListener)
     public static androidx.appcompat.app.AlertDialog$Builder setOnDismissListener()
     public static androidx.appcompat.app.AlertDialog$Builder setOnKeyListener()
+    public final void setPositiveButton(android.content.DialogInterface$OnClickListener)
     public static androidx.appcompat.app.AlertDialog$Builder setSingleChoiceItems()
     public static androidx.appcompat.app.AlertDialog$Builder setTitle()
     public final void setView(android.view.View)
@@ -49072,7 +49160,6 @@ androidx.core.os.BuildCompat:
     public static final int S_EXTENSION_INT
     public static final int T_EXTENSION_INT
 androidx.core.os.BundleApi21ImplKt
-androidx.core.os.BundleCompat
 androidx.core.os.BundleKt
 androidx.core.os.CancellationSignal:
     public java.lang.Object mCancellationSignalObj
@@ -49800,6 +49887,28 @@ androidx.customview.widget.ViewDragHelper:
     public static boolean isViewUnder()
     public final void reportNewEdgeDrags(float,float,int)
     public final boolean smoothSlideViewTo(android.view.View,int,int)
+androidx.documentfile.provider.DocumentFile:
+    public final androidx.documentfile.provider.DocumentFile mParent
+    public abstract boolean canWrite()
+    public abstract androidx.documentfile.provider.DocumentFile createFile(java.lang.String)
+    public final androidx.documentfile.provider.DocumentFile findFile(java.lang.String)
+    public static void fromSingleUri(android.content.Context,android.net.Uri)
+    public abstract androidx.documentfile.provider.DocumentFile getParentFile()
+    public abstract android.net.Uri getUri()
+    public abstract boolean isDirectory()
+    public abstract androidx.documentfile.provider.DocumentFile[] listFiles()
+androidx.documentfile.provider.DocumentsContractApi19:
+    public static boolean canWrite(android.content.Context,android.net.Uri)
+    public static java.lang.String getName(android.content.Context,android.net.Uri)
+    public static java.lang.String getRawType(android.content.Context,android.net.Uri)
+    public static boolean isDirectory(android.content.Context,android.net.Uri)
+androidx.documentfile.provider.SingleDocumentFile
+androidx.documentfile.provider.TreeDocumentFile:
+    public final boolean canWrite()
+    public static void closeQuietly(android.database.Cursor)
+    public final androidx.documentfile.provider.DocumentFile createFile(java.lang.String)
+    public final android.net.Uri getUri()
+    public final boolean isDirectory()
 androidx.emoji2.text.ConcurrencyHelpers
 androidx.emoji2.text.DefaultEmojiCompatConfig$DefaultEmojiCompatConfigFactory
 androidx.emoji2.text.DefaultEmojiCompatConfig$DefaultEmojiCompatConfigHelper:
@@ -50286,7 +50395,6 @@ androidx.fragment.app.FragmentManager$8:
 androidx.fragment.app.FragmentManager$9:
     public final void onActivityResult$1()
 androidx.fragment.app.FragmentManager$FragmentIntentSenderContract:
-    public final android.content.Intent createIntent()
     public static android.content.Intent createIntent$3()
     public final androidx.activity.result.ActivityResult parseResult()
 androidx.fragment.app.FragmentManager$FragmentLifecycleCallbacks
@@ -51767,12 +51875,8 @@ com.encrypt.bwt.DecryptProcessActivity:
     public static void askForCipher()
     public static void askForKey()
     public static void copyToClipboard()
-com.encrypt.bwt.DecryptShareActivity$askForKey$1:
-    public final void invoke$2()
-com.encrypt.bwt.DecryptShareActivity$askForKey$2$1:
-    public final void invoke$2()
-com.encrypt.bwt.DecryptShareActivity$askForKey$2$2:
-    public final void invoke$2()
+com.encrypt.bwt.DecryptShareActivity$$InternalSyntheticLambda$1$d0fc08669c5b2b4ced1ce32f6d8f8cd9ec49bf93766df0f57212374c4b0024c4$0:
+    public final synthetic java.lang.String f$1
 com.encrypt.bwt.DecryptShareActivity$onCreate$1$1:
     public final void invoke$2()
 com.encrypt.bwt.DecryptShareActivity$onCreate$1:
@@ -51782,10 +51886,10 @@ com.encrypt.bwt.DecryptShareActivity:
     static void <clinit>()
     public static void askForCipher$1()
     public static void askForKey$1()
-    public static void copyToClipboard$1()
+    public static void decryptFile()
+    public static void decryptText()
 com.encrypt.bwt.EncryptDecryptHelper:
     public static javax.crypto.spec.SecretKeySpec deriveKeyPBKDF2()
-    public static javax.crypto.spec.SecretKeySpec generateDESKey(java.lang.String)
 com.encrypt.bwt.EncryptProcessActivity$askForKey$1:
     public final void invoke$2()
 com.encrypt.bwt.EncryptProcessActivity$askForKey$2$1:
@@ -51801,13 +51905,9 @@ com.encrypt.bwt.EncryptProcessActivity:
     static void <clinit>()
     public static void askForCipher$2()
     public static void askForKey$2()
-    public static void copyToClipboard$2()
-com.encrypt.bwt.EncryptShareActivity$askForKey$1:
-    public final void invoke$2()
-com.encrypt.bwt.EncryptShareActivity$askForKey$2$1:
-    public final void invoke$2()
-com.encrypt.bwt.EncryptShareActivity$askForKey$2$2:
-    public final void invoke$2()
+    public static void copyToClipboard$1()
+com.encrypt.bwt.EncryptShareActivity$$InternalSyntheticLambda$1$098de10cc442b326e5e02683a3aa4af77251f5d611a290c8762cad859a117ea4$0:
+    public final synthetic java.lang.String f$1
 com.encrypt.bwt.EncryptShareActivity$onCreate$1$1:
     public final void invoke$2()
 com.encrypt.bwt.EncryptShareActivity$onCreate$1:
@@ -51817,7 +51917,22 @@ com.encrypt.bwt.EncryptShareActivity:
     static void <clinit>()
     public static void askForCipher$3()
     public static void askForKey$3()
-    public static void copyToClipboard$3()
+    public static void encryptFile()
+    public static void encryptText()
+com.encrypt.bwt.FileEncryptionActivity$$InternalSyntheticLambda$2$c8232ba55c14354d59974e8e3e4cd62718117e19024c59376b5c181287c999ed$0:
+    public final synthetic java.lang.String f$1
+com.encrypt.bwt.FileEncryptionActivity$onCreate$6$1:
+    public final void invoke$2()
+com.encrypt.bwt.FileEncryptionActivity:
+    public static final int $stable
+    public android.widget.RadioButton radioDecrypt
+    static void <clinit>()
+    public static void askForKey$4()
+    public static void doProcess()
+    public static void pickFile()
+    public static void pickOutputFolder()
+com.encrypt.bwt.FileHelper:
+    public static boolean writeAllBytesToUri(android.content.Context,android.net.Uri,byte[])
 com.encrypt.bwt.ImportKeyActivity:
     public static final com.encrypt.bwt.ImportKeyActivity$Companion Companion
 com.encrypt.bwt.KeyItem:
@@ -51851,8 +51966,13 @@ com.encrypt.bwt.R$array:
 com.encrypt.bwt.R$id:
     public static int backgroundImage
     public static int buttonAddKey
+    public static int buttonFileEncryption
     public static int buttonGenerateRandom
     public static int buttonImportFromQR
+    public static int buttonPickFile
+    public static int buttonPickKey
+    public static int buttonPickOutputDir
+    public static int buttonProcess
     public static int cipherTypeLabel
     public static int cipherTypeSpinner
     public static int decryptButton
@@ -51868,10 +51988,18 @@ com.encrypt.bwt.R$id:
     public static int manageKeysButton
     public static int plainTextInput
     public static int plainTextLabel
+    public static int radioDecrypt
+    public static int radioEncrypt
     public static int secretKeyInput
     public static int secretKeyLabel
     public static int selectKeyButton
+    public static int spinnerCipher
+    public static int textChosenKey
+    public static int textOutputDir
+    public static int textResult
+    public static int textSelectedFile
 com.encrypt.bwt.R$layout:
+    public static int activity_file_encryption
     public static int activity_key_manager
     public static int activity_main
     public static int dialog_add_key
@@ -55062,8 +55190,8 @@ com.google.crypto.tink.shaded.protobuf.AbstractProtobufList:
 com.google.crypto.tink.shaded.protobuf.Android:
     public static boolean ASSUME_ANDROID
     public static java.lang.Class getClassForName(java.lang.String)
-com.google.crypto.tink.shaded.protobuf.ArrayDecoders$$InternalSyntheticThrowCCEIfNotNull$65$0a6f867765761fb64e8e8dc77be285240de03242d55122dd1ca43cd4f0fe3d17$0
-com.google.crypto.tink.shaded.protobuf.ArrayDecoders$$InternalSyntheticThrowCCEIfNotNull$65$0a6f867765761fb64e8e8dc77be285240de03242d55122dd1ca43cd4f0fe3d17$1
+com.google.crypto.tink.shaded.protobuf.ArrayDecoders$$InternalSyntheticThrowCCEIfNotNull$67$0a6f867765761fb64e8e8dc77be285240de03242d55122dd1ca43cd4f0fe3d17$0
+com.google.crypto.tink.shaded.protobuf.ArrayDecoders$$InternalSyntheticThrowCCEIfNotNull$67$0a6f867765761fb64e8e8dc77be285240de03242d55122dd1ca43cd4f0fe3d17$1
 com.google.crypto.tink.shaded.protobuf.ArrayDecoders$1
 com.google.crypto.tink.shaded.protobuf.ArrayDecoders$Registers:
     public final com.google.crypto.tink.shaded.protobuf.ExtensionRegistryLite extensionRegistry
@@ -55322,7 +55450,7 @@ com.google.crypto.tink.shaded.protobuf.ExtensionRegistryLite:
     public static volatile boolean eagerlyParseMessageSets
     public final void findLiteExtensionByNumber(com.google.crypto.tink.shaded.protobuf.AbstractMessageLite,int)
 com.google.crypto.tink.shaded.protobuf.ExtensionSchema
-com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite$$InternalSyntheticThrowCCEIfNotNull$65$4462820cff5b803b0adf9f86637c2e1c2bb1199b92b60e5cd16e777cd53e3e14$0
+com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite$$InternalSyntheticThrowCCEIfNotNull$67$4462820cff5b803b0adf9f86637c2e1c2bb1199b92b60e5cd16e777cd53e3e14$0
 com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite$$InternalSyntheticThrowCCEIfNotNull$7$c5c155b2580c8bd45c9272fe49996665f87b5475a59cce43949e945b8e91d141$0
 com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite$$InternalSyntheticThrowCCEIfNotNull$74$cd429c4a18406d6bf36952ee0edbea02e70da0831e9e79b5dfe25ba6096910a4$0
 com.google.crypto.tink.shaded.protobuf.ExtensionSchemaLite$$InternalSyntheticThrowCCEIfNotNull$81$d989cdc6792e9b53de6715bcc3e36d46949edd89e0bd63f2f0085c62b3539a5c$0
@@ -55353,9 +55481,9 @@ com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotN
 com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$37$449d58dd572bca58c31d4ad8cc4f44d0f667fe83a4ed45c7cbd64dba69fb973a$3
 com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$40$447ab177819bb8553a3afeab172d0bbb45c3218a3c2e0ce539c2f87888133d17$0
 com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$40$447ab177819bb8553a3afeab172d0bbb45c3218a3c2e0ce539c2f87888133d17$1
-com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$63$c97aa89486a6cdd1b9fd890608b653b8337535104b69e52963f8cf2d44a85410$0
-com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$63$d1848d8a4e64113b7a7251768886f2f4edb21f64e13f59158187217dc4e8a85b$0
-com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$63$d1848d8a4e64113b7a7251768886f2f4edb21f64e13f59158187217dc4e8a85b$1
+com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$65$c97aa89486a6cdd1b9fd890608b653b8337535104b69e52963f8cf2d44a85410$0
+com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$65$d1848d8a4e64113b7a7251768886f2f4edb21f64e13f59158187217dc4e8a85b$0
+com.google.crypto.tink.shaded.protobuf.FieldSet$$InternalSyntheticThrowCCEIfNotNull$65$d1848d8a4e64113b7a7251768886f2f4edb21f64e13f59158187217dc4e8a85b$1
 com.google.crypto.tink.shaded.protobuf.FieldSet$1
 com.google.crypto.tink.shaded.protobuf.FieldSet$FieldDescriptorLite
 com.google.crypto.tink.shaded.protobuf.FieldSet
@@ -56999,7 +57127,7 @@ kotlin.internal.jdk7.JDK7PlatformImplementations
 kotlin.internal.jdk8.JDK8PlatformImplementations$ReflectSdkVersion:
     public static final kotlin.internal.jdk8.JDK8PlatformImplementations$ReflectSdkVersion INSTANCE
 kotlin.internal.jdk8.JDK8PlatformImplementations
-kotlin.io.CloseableKt
+kotlin.io.ByteStreamsKt
 kotlin.jdk7.AutoCloseableKt
 kotlin.jvm.JvmClassMappingKt:
     public static final void getKotlinClass(java.lang.Class)
@@ -58562,7 +58690,6 @@ org.bouncycastle.crypto.modes.GCMBlockCipher:
     public static void gHASH()
     public final void gHASHBlock(byte[],byte[])
     public final void gHASHBlock(byte[],byte[],int)
-    public final int getOutputSize(int)
     public static void processPartial()
     public static void reset()
 org.bouncycastle.crypto.modes.SICBlockCipher
