@@ -8,7 +8,7 @@
 │   │   │   │   └── app-release.dm
 │   │   │   └── 1
 │   │   │       └── app-release.dm
-│   │   ├── Encrypt-Decrypt-V4.apk
+│   │   ├── Encrypt-Decryptv5.apk
 │   │   └── output-metadata.json
 │   └── src
 │       ├── androidTest
@@ -24,6 +24,12 @@
 │       │   │   └── com
 │       │   │       └── encrypt
 │       │   │           └── bwt
+│       │   │               ├── aegis
+│       │   │               │   ├── Aegis128L.java
+│       │   │               │   ├── Aegis256.java
+│       │   │               │   ├── Aesblock.java
+│       │   │               │   ├── AuthenticatedCiphertext.java
+│       │   │               │   └── VerificationFailedException.java
 │       │   │               ├── DecryptProcessActivity.kt
 │       │   │               ├── DecryptShareActivity.kt
 │       │   │               ├── EncryptDecryptHelper.kt
@@ -36,11 +42,12 @@
 │       │   │               ├── MainActivity.kt
 │       │   │               ├── QrScannerActivity.kt
 │       │   │               ├── QrUtils.kt
-│       │   │               └── ui
-│       │   │                   └── theme
-│       │   │                       ├── Color.kt
-│       │   │                       ├── Theme.kt
-│       │   │                       └── Type.kt
+│       │   │               ├── ui
+│       │   │               │   └── theme
+│       │   │               │       ├── Color.kt
+│       │   │               │       ├── Theme.kt
+│       │   │               │       └── Type.kt
+│       │   │               └── XChaCha20Poly1305.java
 │       │   └── res
 │       │       ├── drawable
 │       │       │   ├── background.jpg
@@ -133,4 +140,4 @@
 ├── local.properties
 └── settings.gradle.kts
 
-48 directories, 86 files
+49 directories, 92 files

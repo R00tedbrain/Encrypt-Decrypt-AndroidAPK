@@ -1,4 +1,3 @@
-// filename: MainActivity.kt
 package com.encrypt.bwt
 
 import android.content.Intent
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1) Configurar Spinner de cifrados (Incluimos AES, DES, CAMELLIA, CHACHA20POLY1305)
+        // Spinner: cargar cifrados
         val cipherTypes = resources.getStringArray(R.array.cipher_types)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cipherTypes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-        // 2) Botón para “Encriptar”
+        // Botón Encriptar
         binding.encryptButton.setOnClickListener {
             val plainText = binding.plainTextInput.text.toString()
             val secretKey = binding.secretKeyInput.text.toString()
@@ -50,6 +49,8 @@ class MainActivity : AppCompatActivity() {
                     "DES" -> EncryptDecryptHelper.encryptDES(plainText, secretKey)
                     "CAMELLIA" -> EncryptDecryptHelper.encryptCamellia(plainText, secretKey)
                     "CHACHA20POLY1305" -> EncryptDecryptHelper.encryptChaCha20Poly1305(plainText, secretKey)
+                    "XCHACHA20POLY1305" -> EncryptDecryptHelper.encryptXChaCha20Poly1305(plainText, secretKey)
+                    "AEGIS256" -> EncryptDecryptHelper.encryptAegis256(plainText, secretKey)
                     else -> {
                         Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             binding.encryptedTextOutput.setText(encryptedText)
         }
 
-        // 3) Botón para “Desencriptar”
+        // Botón Desencriptar
         binding.decryptButton.setOnClickListener {
             val cipherText = binding.encryptedTextInput.text.toString()
             val secretKey = binding.secretKeyInput.text.toString()
@@ -79,6 +80,8 @@ class MainActivity : AppCompatActivity() {
                     "DES" -> EncryptDecryptHelper.decryptDES(cipherText, secretKey)
                     "CAMELLIA" -> EncryptDecryptHelper.decryptCamellia(cipherText, secretKey)
                     "CHACHA20POLY1305" -> EncryptDecryptHelper.decryptChaCha20Poly1305(cipherText, secretKey)
+                    "XCHACHA20POLY1305" -> EncryptDecryptHelper.decryptXChaCha20Poly1305(cipherText, secretKey)
+                    "AEGIS256" -> EncryptDecryptHelper.decryptAegis256(cipherText, secretKey)
                     else -> {
                         Toast.makeText(this, "Cifrado $selectedCipher no implementado", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
@@ -92,22 +95,17 @@ class MainActivity : AppCompatActivity() {
             binding.decryptedTextOutput.setText(decryptedText)
         }
 
-        // 4) Botón para abrir la pantalla de gestionar claves (KeyManagerActivity)
+        // Botón para gestionar claves (KeyManagerActivity)
         binding.manageKeysButton.setOnClickListener {
             startActivity(Intent(this, KeyManagerActivity::class.java))
         }
 
-        // 5) Botón para “Select Stored Key”
+        // Botón para seleccionar una clave guardada
         binding.selectKeyButton.setOnClickListener {
             pickStoredKey()
         }
     }
 
-    /**
-     * Muestra un diálogo con la lista de claves guardadas.
-     * Si el usuario elige una, se rellena 'secretKeyInput' con esa clave.
-     * Además, añadimos la opción “Enter a new key…” para quien desee introducirla manualmente.
-     */
     private fun pickStoredKey() {
         val keyItems = KeysRepository.loadKeys(this)
         if (keyItems.isEmpty()) {
