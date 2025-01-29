@@ -8,7 +8,7 @@
 │   │   │   │   └── app-release.dm
 │   │   │   └── 1
 │   │   │       └── app-release.dm
-│   │   ├── Encrypt-Decryptv7.apk
+│   │   ├── Encrypt-DecryptV10.apk
 │   │   └── output-metadata.json
 │   └── src
 │       ├── androidTest
@@ -24,6 +24,7 @@
 │       │   │   └── com
 │       │   │       └── encrypt
 │       │   │           └── bwt
+│       │   │               ├── AccessibilityEncryptionService.kt
 │       │   │               ├── aegis
 │       │   │               │   ├── Aegis128L.java
 │       │   │               │   ├── Aegis256.java
@@ -32,6 +33,7 @@
 │       │   │               │   └── VerificationFailedException.java
 │       │   │               ├── DecryptProcessActivity.kt
 │       │   │               ├── DecryptShareActivity.kt
+│       │   │               ├── DialogFlowEncryptionActivity.kt
 │       │   │               ├── EncryptDecryptHelper.kt
 │       │   │               ├── EncryptProcessActivity.kt
 │       │   │               ├── EncryptShareActivity.kt
@@ -42,8 +44,10 @@
 │       │   │               ├── KeyManagerActivity.kt
 │       │   │               ├── KeysRepository.kt
 │       │   │               ├── MainActivity.kt
+│       │   │               ├── PendingIntentHelper.kt
 │       │   │               ├── QrScannerActivity.kt
 │       │   │               ├── QrUtils.kt
+│       │   │               ├── QuickEncryptActivity.kt
 │       │   │               ├── ui
 │       │   │               │   └── theme
 │       │   │               │       ├── Color.kt
@@ -54,12 +58,15 @@
 │       │       ├── drawable
 │       │       │   ├── background.jpg
 │       │       │   ├── ic_launcher_background.xml
-│       │       │   └── ic_launcher_foreground.xml
+│       │       │   ├── ic_launcher_foreground.xml
+│       │       │   └── ic_notification_overlay.xml
 │       │       ├── layout
 │       │       │   ├── activity_file_encryption.xml
 │       │       │   ├── activity_key_manager.xml
 │       │       │   ├── activity_main.xml
-│       │       │   └── dialog_add_key.xml
+│       │       │   ├── activity_quick_encrypt.xml
+│       │       │   ├── dialog_add_key.xml
+│       │       │   └── overlay_draggable_panel.xml
 │       │       ├── mipmap-anydpi-v26
 │       │       │   ├── ic_launcher_round.xml
 │       │       │   └── ic_launcher.xml
@@ -90,7 +97,8 @@
 │       │       │   └── themes.xml
 │       │       └── xml
 │       │           ├── backup_rules.xml
-│       │           └── data_extraction_rules.xml
+│       │           ├── data_extraction_rules.xml
+│       │           └── encryption_accessibility_service_config.xml
 │       └── test
 │           └── java
 │               └── com
@@ -143,4 +151,4 @@
 ├── local.properties
 └── settings.gradle.kts
 
-49 directories, 95 files
+49 directories, 103 files

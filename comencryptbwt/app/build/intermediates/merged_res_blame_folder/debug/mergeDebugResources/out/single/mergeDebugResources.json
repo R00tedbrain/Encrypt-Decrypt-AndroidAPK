@@ -12,6 +12,10 @@
         "source": "com.encrypt.bwt.app-main-64:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.encrypt.bwt.app-debug-62:/layout_overlay_draggable_panel.xml.flat",
+        "source": "com.encrypt.bwt.app-main-64:/layout/overlay_draggable_panel.xml"
+    },
+    {
         "merged": "com.encrypt.bwt.app-debug-62:/mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "com.encrypt.bwt.app-main-64:/mipmap-xxhdpi/ic_launcher.webp"
     },
@@ -44,6 +48,14 @@
         "source": "com.encrypt.bwt.app-main-64:/drawable/background.jpg"
     },
     {
+        "merged": "com.encrypt.bwt.app-debug-62:/drawable_ic_notification_overlay.xml.flat",
+        "source": "com.encrypt.bwt.app-main-64:/drawable/ic_notification_overlay.xml"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-debug-62:/xml_encryption_accessibility_service_config.xml.flat",
+        "source": "com.encrypt.bwt.app-main-64:/xml/encryption_accessibility_service_config.xml"
+    },
+    {
         "merged": "com.encrypt.bwt.app-debug-62:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
         "source": "com.encrypt.bwt.app-main-64:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
@@ -58,6 +70,10 @@
     {
         "merged": "com.encrypt.bwt.app-debug-62:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
         "source": "com.encrypt.bwt.app-main-64:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-debug-62:/layout_activity_quick_encrypt.xml.flat",
+        "source": "com.encrypt.bwt.app-main-64:/layout/activity_quick_encrypt.xml"
     },
     {
         "merged": "com.encrypt.bwt.app-debug-62:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",

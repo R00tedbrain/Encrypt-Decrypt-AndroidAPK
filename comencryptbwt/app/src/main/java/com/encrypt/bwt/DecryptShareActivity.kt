@@ -7,6 +7,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.documentfile.provider.DocumentFile
@@ -29,7 +30,6 @@ class DecryptShareActivity : AppCompatActivity() {
             return
         }
 
-        // Detecta si se trata de archivo o texto
         if (clipUri != null) {
             isFile = true
             fileUri = clipUri
@@ -38,10 +38,8 @@ class DecryptShareActivity : AppCompatActivity() {
             inputText = clipText
         }
 
-        // Preguntar qué cifrado usar
         askForCipher { cipher ->
             selectedCipher = cipher
-            // Preguntar clave
             askForKey { key ->
                 if (isFile) {
                     decryptFile(fileUri!!, key, selectedCipher)
@@ -117,9 +115,6 @@ class DecryptShareActivity : AppCompatActivity() {
             .show()
     }
 
-    // ---------------------------------------------
-    // Desencriptar TEXTO
-    // ---------------------------------------------
     private fun decryptText(cipherText: String, key: String, cipher: String) {
         val result = try {
             when (cipher) {
@@ -138,18 +133,13 @@ class DecryptShareActivity : AppCompatActivity() {
         showFinalDialog(result)
     }
 
-    // ---------------------------------------------
-    // Desencriptar ARCHIVO
-    // ---------------------------------------------
     private fun decryptFile(uri: Uri, key: String, cipher: String) {
-        // 1) Leer bytes
         val data = FileHelper.readAllBytesFromUri(this, uri)
         if (data == null) {
             showFinalDialog("Error reading file.")
             return
         }
 
-        // 2) Desencriptar
         val decrypted: ByteArray = try {
             when (cipher) {
                 "AES" -> EncryptDecryptHelper.decryptBytesAES(data, key)
@@ -169,8 +159,6 @@ class DecryptShareActivity : AppCompatActivity() {
             return
         }
 
-        // 3) Construir nombre final:
-        //    - si termina en ".encrypted", lo quitamos. Si no, añadimos ".decrypted"
         val originalName = FileHelper.getFilenameFromUri(this, uri) ?: "file"
         val finalName = if (originalName.endsWith(".encrypted", ignoreCase = true)) {
             originalName.removeSuffix(".encrypted")
@@ -178,7 +166,6 @@ class DecryptShareActivity : AppCompatActivity() {
             "$originalName.decrypted"
         }
 
-        // 4) Crear el nuevo archivo en la misma carpeta usando DocumentFile
         val sourceDoc = DocumentFile.fromSingleUri(this, uri)
         if (sourceDoc == null) {
             showFinalDialog("Error: Could not access original file.")
@@ -189,13 +176,11 @@ class DecryptShareActivity : AppCompatActivity() {
             showFinalDialog("Error: No parent folder accessible.")
             return
         }
-        // Verificamos si se puede escribir:
         if (!parentDoc.isDirectory || !parentDoc.canWrite()) {
             showFinalDialog("Cannot write in original folder.")
             return
         }
 
-        // Si existía un archivo con el mismo nombre, lo borramos
         parentDoc.findFile(finalName)?.delete()
 
         val mimeType = "application/octet-stream"
@@ -205,7 +190,6 @@ class DecryptShareActivity : AppCompatActivity() {
             return
         }
 
-        // 5) Escribimos
         val success = FileHelper.writeAllBytesToUri(this, newFile.uri, decrypted)
         if (!success) {
             showFinalDialog("Error writing decrypted file.")
@@ -215,12 +199,26 @@ class DecryptShareActivity : AppCompatActivity() {
         showFinalDialog("File decrypted successfully.\nSaved to:\n${newFile.uri}")
     }
 
+    // *** Ajustado para 2 botones: "Copy" y "Close" ***
     private fun showFinalDialog(msg: String) {
         AlertDialog.Builder(this)
             .setTitle("Decrypt Share")
             .setMessage(msg)
-            .setPositiveButton("OK") { _, _ -> finish() }
+            .setPositiveButton("Copy") { _, _ ->
+                val cm = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("DecryptedResult", msg)
+                cm.setPrimaryClip(clip)
+                Toast.makeText(this, "Copied to clipboard", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            .setNegativeButton("Close") { _, _ -> finish() }
             .setOnDismissListener { finish() }
             .show()
+    }
+
+    private fun copyToClipboard(text: String) {
+        val cb = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("DecryptedText", text)
+        cb.setPrimaryClip(clip)
     }
 }

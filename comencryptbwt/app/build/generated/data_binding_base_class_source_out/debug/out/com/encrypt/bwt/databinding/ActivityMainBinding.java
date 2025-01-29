@@ -27,7 +27,16 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ImageView backgroundImage;
 
   @NonNull
+  public final Button buttonBubbleEncryption;
+
+  @NonNull
   public final Button buttonFileEncryption;
+
+  @NonNull
+  public final Button buttonStartOverlay;
+
+  @NonNull
+  public final Button buttonStopOverlay;
 
   @NonNull
   public final TextView cipherTypeLabel;
@@ -75,17 +84,22 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button selectKeyButton;
 
   private ActivityMainBinding(@NonNull FrameLayout rootView, @NonNull ImageView backgroundImage,
-      @NonNull Button buttonFileEncryption, @NonNull TextView cipherTypeLabel,
-      @NonNull Spinner cipherTypeSpinner, @NonNull Button decryptButton,
-      @NonNull TextView decryptedTextLabel, @NonNull EditText decryptedTextOutput,
-      @NonNull Button encryptButton, @NonNull EditText encryptedTextInput,
-      @NonNull TextView encryptedTextLabel, @NonNull EditText encryptedTextOutput,
-      @NonNull Button manageKeysButton, @NonNull EditText plainTextInput,
-      @NonNull TextView plainTextLabel, @NonNull EditText secretKeyInput,
-      @NonNull TextView secretKeyLabel, @NonNull Button selectKeyButton) {
+      @NonNull Button buttonBubbleEncryption, @NonNull Button buttonFileEncryption,
+      @NonNull Button buttonStartOverlay, @NonNull Button buttonStopOverlay,
+      @NonNull TextView cipherTypeLabel, @NonNull Spinner cipherTypeSpinner,
+      @NonNull Button decryptButton, @NonNull TextView decryptedTextLabel,
+      @NonNull EditText decryptedTextOutput, @NonNull Button encryptButton,
+      @NonNull EditText encryptedTextInput, @NonNull TextView encryptedTextLabel,
+      @NonNull EditText encryptedTextOutput, @NonNull Button manageKeysButton,
+      @NonNull EditText plainTextInput, @NonNull TextView plainTextLabel,
+      @NonNull EditText secretKeyInput, @NonNull TextView secretKeyLabel,
+      @NonNull Button selectKeyButton) {
     this.rootView = rootView;
     this.backgroundImage = backgroundImage;
+    this.buttonBubbleEncryption = buttonBubbleEncryption;
     this.buttonFileEncryption = buttonFileEncryption;
+    this.buttonStartOverlay = buttonStartOverlay;
+    this.buttonStopOverlay = buttonStopOverlay;
     this.cipherTypeLabel = cipherTypeLabel;
     this.cipherTypeSpinner = cipherTypeSpinner;
     this.decryptButton = decryptButton;
@@ -136,9 +150,27 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.buttonBubbleEncryption;
+      Button buttonBubbleEncryption = ViewBindings.findChildViewById(rootView, id);
+      if (buttonBubbleEncryption == null) {
+        break missingId;
+      }
+
       id = R.id.buttonFileEncryption;
       Button buttonFileEncryption = ViewBindings.findChildViewById(rootView, id);
       if (buttonFileEncryption == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonStartOverlay;
+      Button buttonStartOverlay = ViewBindings.findChildViewById(rootView, id);
+      if (buttonStartOverlay == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonStopOverlay;
+      Button buttonStopOverlay = ViewBindings.findChildViewById(rootView, id);
+      if (buttonStopOverlay == null) {
         break missingId;
       }
 
@@ -232,7 +264,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((FrameLayout) rootView, backgroundImage, buttonFileEncryption,
+      return new ActivityMainBinding((FrameLayout) rootView, backgroundImage,
+          buttonBubbleEncryption, buttonFileEncryption, buttonStartOverlay, buttonStopOverlay,
           cipherTypeLabel, cipherTypeSpinner, decryptButton, decryptedTextLabel,
           decryptedTextOutput, encryptButton, encryptedTextInput, encryptedTextLabel,
           encryptedTextOutput, manageKeysButton, plainTextInput, plainTextLabel, secretKeyInput,

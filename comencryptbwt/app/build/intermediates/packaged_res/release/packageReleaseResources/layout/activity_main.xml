@@ -238,6 +238,28 @@
                 android:backgroundTint="@color/purple_700"
                 android:textColor="@android:color/white" />
 
+            <!-- BOTÓN NUEVO: BURBUJA (id=buttonBubbleEncryption) -->
+            <Button
+                android:id="@+id/buttonBubbleEncryption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bubble_encryption_button_label"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/purple_700"
+                android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/buttonStartOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="START OVERLAY" />
+
+            <Button
+                android:id="@+id/buttonStopOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STOP OVERLAY"
+                android:layout_marginTop="8dp"/>
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

@@ -652,8 +652,10 @@
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class androidx.profileinstaller.ProfileInstallReceiver { <init>(); }
 -keep class androidx.startup.InitializationProvider { <init>(); }
+-keep class com.encrypt.bwt.AccessibilityEncryptionService { <init>(); }
 -keep class com.encrypt.bwt.DecryptProcessActivity { <init>(); }
 -keep class com.encrypt.bwt.DecryptShareActivity { <init>(); }
+-keep class com.encrypt.bwt.DialogFlowEncryptionActivity { <init>(); }
 -keep class com.encrypt.bwt.EncryptProcessActivity { <init>(); }
 -keep class com.encrypt.bwt.EncryptShareActivity { <init>(); }
 -keep class com.encrypt.bwt.FileEncryptionActivity { <init>(); }
@@ -661,6 +663,7 @@
 -keep class com.encrypt.bwt.KeyManagerActivity { <init>(); }
 -keep class com.encrypt.bwt.MainActivity { <init>(); }
 -keep class com.encrypt.bwt.QrScannerActivity { <init>(); }
+-keep class com.encrypt.bwt.QuickEncryptActivity { <init>(); }
 -keep class com.journeyapps.barcodescanner.CaptureActivity { <init>(); }
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
 

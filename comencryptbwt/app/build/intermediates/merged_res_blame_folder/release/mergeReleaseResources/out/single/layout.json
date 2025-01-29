@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.encrypt.bwt.app-mergeReleaseResources-59:/layout/overlay_draggable_panel.xml",
+        "source": "com.encrypt.bwt.app-main-62:/layout/overlay_draggable_panel.xml"
+    },
+    {
         "merged": "com.encrypt.bwt.app-mergeReleaseResources-59:/layout/activity_main.xml",
         "source": "com.encrypt.bwt.app-main-62:/layout/activity_main.xml"
     },
@@ -10,6 +14,10 @@
     {
         "merged": "com.encrypt.bwt.app-mergeReleaseResources-59:/layout/dialog_add_key.xml",
         "source": "com.encrypt.bwt.app-main-62:/layout/dialog_add_key.xml"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-mergeReleaseResources-59:/layout/activity_quick_encrypt.xml",
+        "source": "com.encrypt.bwt.app-main-62:/layout/activity_quick_encrypt.xml"
     },
     {
         "merged": "com.encrypt.bwt.app-mergeReleaseResources-59:/layout/activity_key_manager.xml",

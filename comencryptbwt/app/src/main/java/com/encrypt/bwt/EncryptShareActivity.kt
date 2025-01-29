@@ -1,4 +1,3 @@
-//Encryptshareactivity
 package com.encrypt.bwt
 
 import android.content.ClipData
@@ -8,6 +7,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.documentfile.provider.DocumentFile
@@ -22,9 +22,6 @@ class EncryptShareActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Detección:
-        // 1) EXTRA_TEXT => texto
-        // 2) EXTRA_STREAM => archivo
         val clipText = intent?.getStringExtra(Intent.EXTRA_TEXT)
         val clipUri = intent?.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
 
@@ -34,19 +31,15 @@ class EncryptShareActivity : AppCompatActivity() {
         }
 
         if (clipUri != null) {
-            // Modo archivo
             isFile = true
             fileUri = clipUri
         } else {
-            // Modo texto
             isFile = false
             inputText = clipText
         }
 
-        // 1) Preguntar cipher
         askForCipher { cipherChosen ->
             selectedCipher = cipherChosen
-            // 2) Pedir key
             askForKey { key ->
                 if (isFile) {
                     encryptFile(fileUri!!, key, selectedCipher)
@@ -58,14 +51,7 @@ class EncryptShareActivity : AppCompatActivity() {
     }
 
     private fun askForCipher(onCipherSelected: (String) -> Unit) {
-        val ciphers = arrayOf(
-            "AES",
-            "DES",
-            "CAMELLIA",
-            "CHACHA20POLY1305",
-            "XCHACHA20POLY1305",
-            "AEGIS256"
-        )
+        val ciphers = arrayOf("AES","DES","CAMELLIA","CHACHA20POLY1305","XCHACHA20POLY1305","AEGIS256")
         AlertDialog.Builder(this)
             .setTitle("Choose Cipher")
             .setItems(ciphers) { _, which ->
@@ -82,6 +68,7 @@ class EncryptShareActivity : AppCompatActivity() {
             val nicknames = keyItems.map { it.nickname }.toMutableList()
             val addNew = "Enter a new key..."
             nicknames.add(addNew)
+
             AlertDialog.Builder(this)
                 .setTitle("Choose a key")
                 .setItems(nicknames.toTypedArray()) { _, which ->
@@ -90,11 +77,8 @@ class EncryptShareActivity : AppCompatActivity() {
                         askKeyManually(onKeyEntered)
                     } else {
                         val item = keyItems.find { it.nickname == selected }
-                        if (item != null) {
-                            onKeyEntered(item.secret)
-                        } else {
-                            askKeyManually(onKeyEntered)
-                        }
+                        if (item != null) onKeyEntered(item.secret)
+                        else askKeyManually(onKeyEntered)
                     }
                 }
                 .show()
@@ -122,9 +106,6 @@ class EncryptShareActivity : AppCompatActivity() {
             .show()
     }
 
-    // ----------------------------------------------------
-    // Lógica: Encriptar TEXTO
-    // ----------------------------------------------------
     private fun encryptText(plainText: String, key: String, cipher: String) {
         val result = try {
             when (cipher) {
@@ -143,18 +124,13 @@ class EncryptShareActivity : AppCompatActivity() {
         showFinalDialog(result)
     }
 
-    // ----------------------------------------------------
-    // Lógica: Encriptar ARCHIVO
-    // ----------------------------------------------------
     private fun encryptFile(uri: Uri, key: String, cipher: String) {
-        // 1) Leer bytes
         val data = FileHelper.readAllBytesFromUri(this, uri)
         if (data == null) {
             showFinalDialog("Error reading file.")
             return
         }
 
-        // 2) Cifrar
         val encrypted: ByteArray = try {
             when (cipher) {
                 "AES" -> EncryptDecryptHelper.encryptBytesAES(data, key)
@@ -174,11 +150,9 @@ class EncryptShareActivity : AppCompatActivity() {
             return
         }
 
-        // 3) Generar nombre final => se añade ".encrypted"
         val originalName = FileHelper.getFilenameFromUri(this, uri) ?: "file"
         val finalName = "$originalName.encrypted"
 
-        // 4) Crear el nuevo archivo en la misma carpeta que el original
         val sourceDoc = DocumentFile.fromSingleUri(this, uri)
         if (sourceDoc == null) {
             showFinalDialog("Error: Could not access original file.")
@@ -194,7 +168,6 @@ class EncryptShareActivity : AppCompatActivity() {
             return
         }
 
-        // Si existía un archivo con ese nombre, lo borramos
         parentDoc.findFile(finalName)?.delete()
 
         val mimeType = "application/octet-stream"
@@ -203,8 +176,6 @@ class EncryptShareActivity : AppCompatActivity() {
             showFinalDialog("Failed to create output file.")
             return
         }
-
-        // 5) Escribimos los bytes en el nuevo archivo
         val success = FileHelper.writeAllBytesToUri(this, newFile.uri, encrypted)
         if (!success) {
             showFinalDialog("Error writing encrypted file.")
@@ -214,11 +185,19 @@ class EncryptShareActivity : AppCompatActivity() {
         showFinalDialog("File encrypted successfully.\nSaved to:\n${newFile.uri}")
     }
 
+    // CAMBIADO: 2 botones => "Copy" y "Close"
     private fun showFinalDialog(msg: String) {
         AlertDialog.Builder(this)
             .setTitle("Encrypt Share")
             .setMessage(msg)
-            .setPositiveButton("OK") { _, _ -> finish() }
+            .setPositiveButton("Copy") { _, _ ->
+                val cm = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("EncryptedResult", msg)
+                cm.setPrimaryClip(clip)
+                Toast.makeText(this, "Copied to clipboard", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            .setNegativeButton("Close") { _, _ -> finish() }
             .setOnDismissListener { finish() }
             .show()
     }

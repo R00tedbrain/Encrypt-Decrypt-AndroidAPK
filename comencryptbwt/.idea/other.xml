@@ -268,6 +268,17 @@
           <option name="screenY" value="2400" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
+          <option name="api" value="33" />
+          <option name="brand" value="motorola" />
+          <option name="codename" value="maui" />
+          <option name="id" value="maui" />
+          <option name="manufacturer" value="Motorola" />
+          <option name="name" value="moto g play - 2023" />
+          <option name="screenDensity" value="280" />
+          <option name="screenX" value="720" />
+          <option name="screenY" value="1600" />
+        </PersistentDeviceSelectionData>
+        <PersistentDeviceSelectionData>
           <option name="api" value="31" />
           <option name="brand" value="google" />
           <option name="codename" value="oriole" />

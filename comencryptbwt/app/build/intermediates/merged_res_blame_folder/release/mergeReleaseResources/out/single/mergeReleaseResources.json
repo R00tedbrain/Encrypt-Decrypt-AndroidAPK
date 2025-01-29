@@ -12,6 +12,10 @@
         "source": "com.encrypt.bwt.app-material-1.12.0-19:/color/m3_efab_ripple_color_selector.xml"
     },
     {
+        "merged": "com.encrypt.bwt.app-release-61:/layout_overlay_draggable_panel.xml.flat",
+        "source": "com.encrypt.bwt.app-main-62:/layout/overlay_draggable_panel.xml"
+    },
+    {
         "merged": "com.encrypt.bwt.app-release-61:/color_material_personalized_color_secondary_text.xml.flat",
         "source": "com.encrypt.bwt.app-material-1.12.0-19:/color/material_personalized_color_secondary_text.xml"
     },
@@ -250,6 +254,10 @@
     {
         "merged": "com.encrypt.bwt.app-release-61:/drawable_mtrl_checkbox_button_icon.xml.flat",
         "source": "com.encrypt.bwt.app-material-1.12.0-19:/drawable/mtrl_checkbox_button_icon.xml"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-release-61:/layout_activity_quick_encrypt.xml.flat",
+        "source": "com.encrypt.bwt.app-main-62:/layout/activity_quick_encrypt.xml"
     },
     {
         "merged": "com.encrypt.bwt.app-release-61:/color_m3_timepicker_secondary_text_button_text_color.xml.flat",
@@ -1170,6 +1178,10 @@
     {
         "merged": "com.encrypt.bwt.app-release-61:/animator-v21_m3_appbar_state_list_animator.xml.flat",
         "source": "com.encrypt.bwt.app-material-1.12.0-19:/animator-v21/m3_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-release-61:/xml_encryption_accessibility_service_config.xml.flat",
+        "source": "com.encrypt.bwt.app-main-62:/xml/encryption_accessibility_service_config.xml"
     },
     {
         "merged": "com.encrypt.bwt.app-release-61:/drawable_abc_ic_arrow_drop_right_black_24dp.xml.flat",
@@ -3014,6 +3026,10 @@
     {
         "merged": "com.encrypt.bwt.app-release-61:/drawable_m3_popupmenu_background_overlay.xml.flat",
         "source": "com.encrypt.bwt.app-material-1.12.0-19:/drawable/m3_popupmenu_background_overlay.xml"
+    },
+    {
+        "merged": "com.encrypt.bwt.app-release-61:/drawable_ic_notification_overlay.xml.flat",
+        "source": "com.encrypt.bwt.app-main-62:/drawable/ic_notification_overlay.xml"
     },
     {
         "merged": "com.encrypt.bwt.app-release-61:/interpolator-v21_mtrl_fast_out_slow_in.xml.flat",

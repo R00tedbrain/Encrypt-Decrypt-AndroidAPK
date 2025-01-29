@@ -2,11 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.encrypt.bwt"
     android:versionCode="4"
-    android:versionName="7" >
+    android:versionName="8" >
 
     <uses-sdk
         android:minSdkVersion="26"
         android:targetSdkVersion="35" />
+
+    <!-- (Opcional) Permiso para mostrar notificaciones en Android 13+ -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <permission
         android:name="com.encrypt.bwt.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -32,8 +35,18 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.wifi"
-        android:required="false" /> <!-- (Opcional) Permiso de Cámara si escaneas QR -->
-    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+        android:required="false" />
+    <!--
+         Si NO usas la superposición (SYSTEM_ALERT_WINDOW),
+         puedes omitir esta línea.
+         Si llegaste a usar overlay en versiones anteriores,
+         quita o comenta el uses-permission para no pedirlo.
+    -->
+    <!--
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW"
+        tools:node="remove" />
+    -->
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -55,7 +68,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Para ENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+        <!-- ENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
         <activity
             android:name="com.encrypt.bwt.EncryptProcessActivity"
             android:exported="true"
@@ -69,7 +82,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Para DESENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
+        <!-- DESENCRIPTAR texto seleccionado (ACTION_PROCESS_TEXT) -->
         <activity
             android:name="com.encrypt.bwt.DecryptProcessActivity"
             android:exported="true"
@@ -83,7 +96,7 @@
             </intent-filter>
         </activity>
 
-        <!-- ENCRIPTAR al COMPARTIR (ACTION_SEND) => handle text/* y file/* -->
+        <!-- ENCRIPTAR al COMPARTIR (ACTION_SEND) => text/* y file/* -->
         <activity
             android:name="com.encrypt.bwt.EncryptShareActivity"
             android:exported="true"
@@ -92,19 +105,19 @@
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <!-- Aceptar texto: -->
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <!-- Aceptar cualquier archivo: -->
+
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
 
-        <!-- DESENCRIPTAR al COMPARTIR (ACTION_SEND) => handle text/* y file/* -->
+        <!-- DESENCRIPTAR al COMPARTIR (ACTION_SEND) => text/* y file/* -->
         <activity
             android:name="com.encrypt.bwt.DecryptShareActivity"
             android:exported="true"
@@ -113,14 +126,14 @@
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <!-- Aceptar texto: -->
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <!-- Aceptar cualquier archivo: -->
+
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
@@ -142,11 +155,56 @@
             android:name="com.encrypt.bwt.QrScannerActivity"
             android:exported="false" />
 
-        <!-- NUEVO: Activity para manejo local de archivos -->
+        <!-- Activity para manejo local de archivos -->
         <activity
             android:name="com.encrypt.bwt.FileEncryptionActivity"
             android:exported="true"
             android:label="File Encrypt/Decrypt" />
+
+        <!-- ===== Servicio de Accesibilidad ===== -->
+        <service
+            android:name="com.encrypt.bwt.AccessibilityEncryptionService"
+            android:description="@string/accessibility_service_description"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <!-- Config del servicio de accesibilidad -->
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/encryption_accessibility_service_config" />
+        </service>
+
+        <!-- QuickEncryptActivity (si aún la usas para algo) -->
+        <activity
+            android:name="com.encrypt.bwt.QuickEncryptActivity"
+            android:exported="true"
+            android:label="Quick Encrypt" />
+
+        <!--
+             DialogFlowEncryptionActivity
+             (para la UI de “Choose Operation: Encrypt or Decrypt”)
+        -->
+        <activity
+            android:name="com.encrypt.bwt.DialogFlowEncryptionActivity"
+            android:exported="true"
+            android:label="DialogFlow Encryption" />
+
+        <!--
+             Si NO usas OverlayService, elíminalo completamente.
+             Si en el pasado lo usaste, bórralo o coméntalo.
+        -->
+        <!--
+        <service
+            android:name=".OverlayService"
+            android:exported="false"
+            android:enabled="false"
+            tools:node="remove"/>
+        -->
 
         <provider
             android:name="androidx.startup.InitializationProvider"

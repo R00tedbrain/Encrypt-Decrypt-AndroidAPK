@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="bubble_modes">
+        <item>Encrypt</item>
+        <item>Decrypt</item>
+    </string-array>
     <string-array name="cipher_types">
         <item>AES</item>
         <item>DES</item>
@@ -11,12 +15,16 @@
     <color name="hint_gray">#CCCCCC</color>
     <color name="purple_500">#9C27B0</color>
     <color name="purple_700">#7B1FA2</color>
+    <string name="accessibility_service_description">
+        Servicio de cifrado accesible: permite detectar texto seleccionado en otras apps.
+    </string>
     <string name="action_decrypt_label">Decrypt with Key</string>
     <string name="action_encrypt_label">Encrypt with Key</string>
     <string name="add_key_button">Add Key</string>
     <string name="add_key_dialog_title">Add New Key</string>
     <string name="add_new_key_option">Enter a new key...</string>
     <string name="app_name">EncryptionApp</string>
+    <string name="bubble_encryption_button_label">BurbujaEncryptDecrypt</string>
     <string name="button_decrypt">Decrypt</string>
     <string name="button_encrypt">Encrypt</string>
     <string name="cancel_button">Cancel</string>
@@ -65,12 +73,12 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
     <style name="MySpinnerStyle" parent="Widget.AppCompat.Spinner">
-        
         <item name="android:textColor">@android:color/white</item>
-        
         <item name="android:popupBackground">@android:color/white</item>
-        
         <item name="android:spinnerDropDownItemStyle">@style/MySpinnerDropDownItemStyle</item>
+    </style>
+    <style name="OverlayAlertDialog" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
     <style name="Theme.Comencryptbwt" parent="android:Theme.Material.Light.NoActionBar"/>
     <style name="Theme.Encryption" parent="Theme.MaterialComponents.DayNight.NoActionBar">

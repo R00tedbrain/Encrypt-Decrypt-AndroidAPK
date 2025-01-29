@@ -77,6 +77,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array bubble_modes
 array cipher_types
 attr SharedValue
 attr SharedValueId
@@ -3057,6 +3058,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notification_overlay
 drawable ic_search_black_24
 drawable indeterminate_static
 drawable m3_avd_hide_password
@@ -3238,7 +3240,14 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnCloseOverlay
+id btnCloseQE
+id btnExecute
+id btnExecuteQE
+id btnPickKey
+id btnPickKeyQE
 id buttonAddKey
+id buttonBubbleEncryption
 id buttonFileEncryption
 id buttonGenerateRandom
 id buttonImportFromQR
@@ -3247,6 +3256,8 @@ id buttonPickFile
 id buttonPickKey
 id buttonPickOutputDir
 id buttonProcess
+id buttonStartOverlay
+id buttonStopOverlay
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3320,6 +3331,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id draggableRootLayout
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -3330,6 +3342,10 @@ id editNickname
 id editSecret
 id edit_query
 id edit_text_id
+id edtInput
+id edtOutput
+id edtQEInput
+id edtQEOutput
 id elastic
 id embed
 id encryptButton
@@ -3585,6 +3601,9 @@ id south
 id spacer
 id special_effects_controller_view_tag
 id spinnerCipher
+id spinnerCipherQE
+id spinnerMode
+id spinnerModeQE
 id spline
 id split_action_bar
 id spread
@@ -3623,6 +3642,7 @@ id tag_window_insets_animation_callback
 id text
 id text2
 id textChosenKey
+id textChosenKeyQE
 id textEnd
 id textOutputDir
 id textResult
@@ -3816,6 +3836,7 @@ layout abc_tooltip
 layout activity_file_encryption
 layout activity_key_manager
 layout activity_main
+layout activity_quick_encrypt
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3892,6 +3913,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout overlay_draggable_panel
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3930,6 +3952,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accessibility_service_description
 string action_decrypt_label
 string action_encrypt_label
 string add_key_button
@@ -3945,6 +3968,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string bubble_encryption_button_label
 string button_decrypt
 string button_encrypt
 string call_notification_answer_action
@@ -4528,6 +4552,7 @@ style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
 style MySpinnerDropDownItemStyle
 style MySpinnerStyle
+style OverlayAlertDialog
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -5506,3 +5531,4 @@ styleable zxing_finder zxing_possible_result_points zxing_result_view zxing_view
 styleable zxing_view zxing_scanner_layout
 xml backup_rules
 xml data_extraction_rules
+xml encryption_accessibility_service_config

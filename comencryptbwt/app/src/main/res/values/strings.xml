@@ -77,4 +77,16 @@
     <string name="label_enter_nickname_for_generated_key">Nickname for this key</string>
     <string name="msg_key_scanned_successfully">Key scanned successfully. Please enter a nickname:</string>
 
+    <!-- NUEVO: para el botón de burbuja -->
+    <string name="bubble_encryption_button_label">BurbujaEncryptDecrypt</string>
+
+    <string-array name="bubble_modes">
+        <item>Encrypt</item>
+        <item>Decrypt</item>
+    </string-array>
+
+    <!-- Descripción del servicio de accesibilidad (nuevo) -->
+    <string name="accessibility_service_description">
+        Servicio de cifrado accesible: permite detectar texto seleccionado en otras apps.
+    </string>
 </resources>

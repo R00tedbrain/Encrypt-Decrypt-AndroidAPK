@@ -1,1 +1,0 @@
-Encrypt / Decrypt APK , with AES 256 GCM/DES
