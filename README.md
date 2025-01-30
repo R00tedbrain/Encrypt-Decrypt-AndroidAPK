@@ -4,63 +4,92 @@
 ![1](https://github.com/user-attachments/assets/4d1e47e4-3e80-4545-9bd5-dcfad2b4406c)
 
 
-Com.encrypt.bwt 🔐
+Encrypt-DecrypT Android APK :shield: :lock:
 
-¡Bienvenido a com.encrypt.bwt! Esta es una aplicación de cifrado y descifrado para Android que te permite:
+Welcome to Encrypt-DecrypT!
+This app allows you to encrypt and decrypt text and files using a variety of algorithms, quickly and easily. It also includes advanced Accessibility features to detect selected or copied text from the clipboard, offering a seamless encryption/decryption flow.
+Key Features :sparkles:
 
-    Encriptar o desencriptar texto en la propia app usando una clave manual o guardada.
-    Seleccionar texto en cualquier app y, mediante el menú de “Procesar texto…” (ACTION_PROCESS_TEXT) o “Compartir” (ACTION_SEND), encriptarlo o desencriptarlo de forma rápida.
-    Gestionar (agregar, eliminar) tus claves de forma segura en EncryptedSharedPreferences, eligiendo un apodo para cada clave (no se revela la clave real en la interfaz).
-    Elegir la clave guardada directamente en la pantalla principal para no volver a escribirla.
+    Text Encryption/Decryption
+        Supported algorithms: AES, DES, CAMELLIA, ChaCha20-Poly1305, XChaCha20-Poly1305, Aegis256
+        Intuitive interface to input text, choose an algorithm, and see the result.
 
-Características 🛠️
+    Generate 256 bits key automatic:
+    Can generate automatic random keys for encrypt decrypt of 256 bits in Manage Keys
 
-    Encriptar / Desencriptar texto con AES o DES.
-    Claves guardadas mediante EncryptedSharedPreferences, con un apodo para identificarlas.
-    Menú contextual “Procesar texto…” o “Compartir” en otras apps para cifrar/descifrar sin salir de la app original.
-    Interfaz sencilla y personalizable.
-    Soporte de minSdk=26 y targetSdk=34.
-    Multilenguaje (en strings.xml) con soporte para traducciones adicionales.
+    Share/Import Key encription via  QR
+    Share any key created with other people to use the same for encription and import via QR on manage keyes, u can
+    Share ur Key pressing on your key and Export, or import  presing import key via qr
+
+    File Encryption/Decryption
+        Select files from your device.
+        Encrypt or decrypt them using the same algorithms (output file name automatically ends with .encrypted or .decrypted).
+
+    Built-In Key Manager :key:
+        Add, delete, or generate random keys.
+        Import keys from QR codes, or export them to QR as well.
+        Keys are stored securely (EncryptedSharedPreferences).
+
+    Share Encryption Flow
+        Share -> Encrypt or Share -> Decrypt text/files from other apps.
+        Quick and convenient for multi-app workflows.
+
+    Optional Accessibility Service :handshake:
+        Detects selected text (when you highlight text on screen)
+        Detects copied text (clipboard)
+        Shows a notification prompting you to encrypt/decrypt on the fly, opening the same DialogFlowEncryptionActivity (“Choose Operation”).
+
+    Toggle Accessibility Logic
+        A “BurbujaEncryption” button (or similar) can activate/deactivate the logic without disabling it in Android Settings, via an internal flag.
+        Perfect for pausing detection without leaving the system settings screen.
+
+    Dialog Flow (DialogFlowEncryptionActivity) :speech_balloon:
+        Displays a step-by-step sequence: “Choose Operation” (Encrypt/Decrypt) → “Choose Cipher” → “Pick/Enter Key” → final result.
+        Ideal for a friendly, guided experience.
+
+    Android 13+ Support
+        Requests POST_NOTIFICATIONS permission if you want to see notifications when text is selected or copied.
+
+        Basic Usage :rocket:
+
+    Main Screen
+        Enter text and a key (or pick a saved key).
+        Select the algorithm from the spinner.
+        Tap Encrypt or Decrypt.
+        Copy or share the resulting text.
+    File Encryption :file_folder:
+        Tap “FILE ENCRYPTION” on the MainActivity.
+        Pick a file and an output folder.
+        Choose the algorithm and a key.
+        Tap EXECUTE.
+    Accessibility (optional)
+        Enable it in Settings → Accessibility → “Encrypt-DecrypT Service”.
+        Once enabled, selecting or copying text in any app will trigger a notification. Tapping it opens the DialogFlow (“Choose Operation”).
+        From the app’s MainActivity, use “BurbujaEncryption” to enable or disable the logic without turning the service off in Settings.
+
+    FAQ :question:
+
+    How do I enable/disable the accessibility service logic without going to system settings?
+        Tap the “BurbujaEncryption” button in MainActivity. It toggles an internal SharedPreferences flag. If off, the service won’t process events even if it’s enabled in system settings.
+
+    What if I forget my key?
+        You won’t be able to decrypt your text/file. Make sure you keep track of your keys or store them in the KeyManager.
+
+    Why am I not seeing notifications when copying text?
+        On Android 13+, you must grant notification permission (POST_NOTIFICATIONS).
+        Ensure the accessibility service is enabled and the internal logic isn’t toggled off.
+
+Acknowledgments
+
+    :sparkling_heart: Thanks to the open-source community and encryption libraries (BouncyCastle, etc.).
+    :coffee: Special thanks to all testers for their feedback and reports.
 
 
-
-Cómo instalar 📲
-
-    Clona este repositorio o descárgalo como ZIP.
-    Ábrelo en Android Studio.
-    Ve al menú Build → Make Project o Sync Project with Gradle Files.
-    Ejecuta en un emulador o un dispositivo real (Android 8+).
-
-Cómo usar la aplicación 🤖
-
-    Abrir la app en tu dispositivo.
-    En la pantalla principal:
-        Elige el algoritmo de cifrado (AES o DES).
-        Escribe tu texto en el campo “Text to Encrypt” si vas a encriptar, o en “Encrypted text” si deseas desencriptar.
-        Introduce la clave en “Secret Key” (o pulsa Select Stored Key si ya la tienes guardada).
-        Pulsa Encrypt o Decrypt según corresponda.
-    Gestionar Claves:
-        Pulsa Manage Keys.
-        En KeyManagerActivity, añade un apodo y la clave real.
-        Para eliminar una clave, mantén pulsado el apodo en la lista (long-click).
-    Procesar texto en otras apps:
-        Selecciona texto en un navegador (Chrome, etc.) o un editor compatible.
-        Toca “Procesar texto…” → “Encrypt with Key” / “Decrypt with Key”.
-        Aparecerá un AlertDialog pidiendo la clave o permitiendo elegir una guardada, y luego mostrando el resultado.
-    Compartir texto en apps como WhatsApp o Telegram:
-        Selecciona “Compartir” → “Encrypt Share” / “Decrypt Share” en el menú.
-        Se abrirá la lógica de cifrado/descifrado.
-
-Dependencias y librerías ⚙️
-
-    EncryptedSharedPreferences (AndroidX Security)
-    Gson (para serializar las claves en JSON)
-    BouncyCastle (opcional; ejemplo de cifrado extra)
-    Soporte para Jetpack Compose (opcional; si usas vistas tradicionales no es requerido).
+        
 
 
-Licencia 📜
-## Licencia
+License📜
+## License
 
 Este proyecto está licenciado bajo la [Licencia Pública General de GNU versión 3](https://www.gnu.org/licenses/gpl-3.0.es.html). 
 Por favor, revisa el archivo [LICENSE](./LICENSE) para obtener más información.
