@@ -31,8 +31,8 @@ android {
         applicationId = "com.encrypt.bwt"
         minSdk = 26
         targetSdk = 35
-        versionCode = 4
-        versionName = "8"
+        versionCode = 9
+        versionName = "9"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
