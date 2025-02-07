@@ -1,1 +1,1 @@
-Encrypt / Decrypt APK , with AES 256 GCM/DES
+Text & File Encryption/Decryption with new OverlayTechnology
