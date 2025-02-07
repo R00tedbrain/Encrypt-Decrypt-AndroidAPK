@@ -1,14 +1,15 @@
-![4](https://github.com/user-attachments/assets/f9c17aa7-15c5-441c-89dc-25555d493f37)
-![3](https://github.com/user-attachments/assets/d969396a-b94f-43f1-a563-c9e9c283ea3e)
-![2](https://github.com/user-attachments/assets/cc09b8e6-dfe5-4674-9c3a-f6be3b083504)
-![1](https://github.com/user-attachments/assets/4d1e47e4-3e80-4545-9bd5-dcfad2b4406c)
-
-
-Encrypt-DecrypT Android APK :shield: :lock:
+# Encrypt-DecrypT Android APK :shield: :lock:
 
 Welcome to Encrypt-DecrypT!
 This app allows you to encrypt and decrypt text and files using a variety of algorithms, quickly and easily. It also includes advanced Accessibility features to detect selected or copied text from the clipboard, offering a seamless encryption/decryption flow.
-Key Features :sparkles:
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/com.encrypt.bwt/)
+
+Or download the latest APK from the [Releases Section](https://github.com/R00tedbrain/Encrypt-Decrypt-AndroidAPK/releases/latest).
+
+### Key Features :sparkles:
 
     Text Encryption/Decryption
         Supported algorithms: AES, DES, CAMELLIA, ChaCha20-Poly1305, XChaCha20-Poly1305, Aegis256
@@ -79,18 +80,20 @@ Key Features :sparkles:
         On Android 13+, you must grant notification permission (POST_NOTIFICATIONS).
         Ensure the accessibility service is enabled and the internal logic isn’t toggled off.
 
-Acknowledgments
+### Screenshots
 
-    :sparkling_heart: Thanks to the open-source community and encryption libraries (BouncyCastle, etc.).
-    :coffee: Special thanks to all testers for their feedback and reports.
+![4](https://github.com/user-attachments/assets/f9c17aa7-15c5-441c-89dc-25555d493f37)
+![3](https://github.com/user-attachments/assets/d969396a-b94f-43f1-a563-c9e9c283ea3e)
+![2](https://github.com/user-attachments/assets/cc09b8e6-dfe5-4674-9c3a-f6be3b083504)
+![1](https://github.com/user-attachments/assets/4d1e47e4-3e80-4545-9bd5-dcfad2b4406c)
 
+### Acknowledgments
 
-        
+:sparkling_heart: Thanks to the open-source community and encryption libraries (BouncyCastle, etc.).
 
+:coffee: Special thanks to all testers for their feedback and reports.
 
-License📜
-## License
+### License📜
 
 Este proyecto está licenciado bajo la [Licencia Pública General de GNU versión 3](https://www.gnu.org/licenses/gpl-3.0.es.html). 
 Por favor, revisa el archivo [LICENSE](./LICENSE) para obtener más información.
-
