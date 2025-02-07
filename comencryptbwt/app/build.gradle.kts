@@ -31,8 +31,8 @@ android {
         applicationId = "com.encrypt.bwt"
         minSdk = 26
         targetSdk = 35
-        versionCode = 9
-        versionName = "9"
+        versionCode = 10
+        versionName = "10"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -110,6 +110,9 @@ dependencies {
     // ZXing (QR)
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation("com.google.zxing:core:3.5.1")
+
+    // --- AÑADIR ESTA LÍNEA PARA BIOMETRÍA ---
+    implementation("androidx.biometric:biometric:1.1.0")
 
     // Tests
     testImplementation("junit:junit:4.13.2")

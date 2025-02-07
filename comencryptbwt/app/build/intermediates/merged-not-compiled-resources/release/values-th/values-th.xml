@@ -48,12 +48,24 @@
     <string name="clear_text_end_icon_content_description">ล้างข้อความ</string>
     <string msgid="406453423630273620" name="close_drawer">"ปิดเมนูการนำทาง"</string>
     <string msgid="7573152094250666567" name="close_sheet">"ปิดชีต"</string>
+    <string msgid="5912733858573823945" name="confirm_device_credential_password">"ใช้รหัสผ่าน"</string>
     <string msgid="8038256446254964252" name="default_error_message">"อินพุตไม่ถูกต้อง"</string>
+    <string msgid="4776854077120974966" name="default_error_msg">"ข้อผิดพลาดที่ไม่รู้จัก"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"หน้าต่างป๊อปอัป"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"เมนูแบบเลื่อนลง"</string>
     <string name="error_a11y_label">ข้อผิดพลาด: ไม่ถูกต้อง</string>
     <string name="error_icon_content_description">ข้อผิดพลาด</string>
     <string name="exposed_dropdown_menu_content_description">แสดงเมนูแบบเลื่อนลง</string>
+    <string msgid="1072308044213194243" name="fingerprint_dialog_touch_sensor">"แตะเซ็นเซอร์ลายนิ้วมือ"</string>
+    <string msgid="8216738333501875566" name="fingerprint_error_hw_not_available">"ฮาร์ดแวร์ลายนิ้วมือไม่พร้อมใช้งาน"</string>
+    <string msgid="6306988885793029438" name="fingerprint_error_hw_not_present">"อุปกรณ์นี้ไม่มีเซ็นเซอร์ลายนิ้วมือ"</string>
+    <string msgid="7291787166416782245" name="fingerprint_error_lockout">"ลองหลายครั้งเกินไป โปรดลองอีกครั้งภายหลัง"</string>
+    <string msgid="7520712796891883488" name="fingerprint_error_no_fingerprints">"ไม่มีลายนิ้วมือที่ลงทะเบียน"</string>
+    <string msgid="7627716295344353987" name="fingerprint_error_user_canceled">"ผู้ใช้ยกเลิกการทำงานของลายนิ้วมือ"</string>
+    <string msgid="3873359464293253009" name="fingerprint_not_recognized">"ไม่รู้จัก"</string>
+    <string msgid="3791785319221634505" name="generic_error_no_device_credential">"ไม่ได้ตั้ง PIN, รูปแบบ หรือรหัสผ่าน"</string>
+    <string msgid="1807436368654974044" name="generic_error_no_keyguard">"อุปกรณ์นี้ไม่รองรับ PIN, รูปแบบ หรือรหัสผ่าน"</string>
+    <string msgid="7309881387583143581" name="generic_error_user_canceled">"ผู้ใช้ยกเลิกการตรวจสอบสิทธิ์"</string>
     <string name="icon_content_description">ไอคอนกล่องโต้ตอบ</string>
     <string msgid="6827826412747255547" name="in_progress">"กำลังดำเนินการ"</string>
     <string msgid="7933458017204019916" name="indeterminate">"เลือกบางส่วน"</string>

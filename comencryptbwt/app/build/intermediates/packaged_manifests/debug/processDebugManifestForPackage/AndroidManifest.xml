@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.encrypt.bwt"
-    android:versionCode="4"
-    android:versionName="8" >
+    android:versionCode="9"
+    android:versionName="9" >
 
     <uses-sdk
         android:minSdkVersion="26"
         android:targetSdkVersion="35" />
 
-    <!-- Permiso notificaciones (Android 13+, opcional) -->
+    <!-- (Opcional) Permiso para mostrar notificaciones en Android 13+ -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!-- suppress DeprecatedClassUsageInspection -->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <permission
         android:name="com.encrypt.bwt.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -35,7 +37,13 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.wifi"
-        android:required="false" /> <!-- Si ya NO usas overlay en absoluto, puedes quitar SYSTEM_ALERT_WINDOW -->
+        android:required="false" />
+    <!--
+         Si NO usas la superposición (SYSTEM_ALERT_WINDOW),
+         puedes omitir esta línea.
+         Si llegaste a usar overlay en versiones anteriores,
+         quita o comenta el uses-permission para no pedirlo.
+    -->
     <!--
     <uses-permission
         android:name="android.permission.SYSTEM_ALERT_WINDOW"
@@ -157,7 +165,7 @@
             android:exported="true"
             android:label="File Encrypt/Decrypt" />
 
-        <!-- ===== Servicio de Accesibilidad (para notificación al copiar) ===== -->
+        <!-- ===== Servicio de Accesibilidad ===== -->
         <service
             android:name="com.encrypt.bwt.AccessibilityEncryptionService"
             android:description="@string/accessibility_service_description"
@@ -169,25 +177,32 @@
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
 
+            <!-- Config del servicio de accesibilidad -->
             <meta-data
                 android:name="android.accessibilityservice"
                 android:resource="@xml/encryption_accessibility_service_config" />
         </service>
 
-        <!-- QuickEncryptActivity: la Activity que se abre al pulsar la notificación -->
+        <!-- QuickEncryptActivity (si aún la usas para algo) -->
         <activity
             android:name="com.encrypt.bwt.QuickEncryptActivity"
             android:exported="true"
             android:label="Quick Encrypt" />
 
-        <!-- DialogFlowEncryptionActivity (para “Start DialogFlow”) -->
+        <!--
+             DialogFlowEncryptionActivity
+             (para la UI de “Choose Operation: Encrypt or Decrypt”)
+        -->
         <activity
             android:name="com.encrypt.bwt.DialogFlowEncryptionActivity"
             android:exported="true"
             android:label="DialogFlow Encryption" />
 
         <!--
-        Si YA NO usas OverlayService => bórralo
+             Si NO usas OverlayService, elíminalo completamente.
+             Si en el pasado lo usaste, bórralo o coméntalo.
+        -->
+        <!--
         <service
             android:name=".OverlayService"
             android:exported="false"

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.encrypt.bwt.app-mergeDebugResources-60:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.encrypt.bwt.app-mergeDebugResources-61:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/caa5162e46eb491d902d1b3bcdd2d5ef/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",

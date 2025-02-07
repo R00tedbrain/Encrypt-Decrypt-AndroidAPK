@@ -52,6 +52,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.biometric:biometric:1.1.0@aar"
+      jars="/home/f4ckbr4in/.gradle/caches/8.9/transforms/0b60920c3d0dfd82955d556d8f053810/transformed/biometric-1.1.0/jars/classes.jar"
+      resolved="androidx.biometric:biometric:1.1.0"
+      folder="/home/f4ckbr4in/.gradle/caches/8.9/transforms/0b60920c3d0dfd82955d556d8f053810/transformed/biometric-1.1.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.viewpager2:viewpager2:1.0.0@aar"
       jars="/home/f4ckbr4in/.gradle/caches/8.9/transforms/878155ff931be0d48d65e6c11ffbc3e4/transformed/viewpager2-1.0.0/jars/classes.jar"
       resolved="androidx.viewpager2:viewpager2:1.0.0"

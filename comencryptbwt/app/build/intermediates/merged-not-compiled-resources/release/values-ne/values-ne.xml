@@ -48,12 +48,24 @@
     <string name="clear_text_end_icon_content_description">पाठ खाली गर्नुहोस्</string>
     <string msgid="406453423630273620" name="close_drawer">"नेभिगेसन मेनु बन्द गर्नुहोस्"</string>
     <string msgid="7573152094250666567" name="close_sheet">"पाना बन्द गर्नुहोस्"</string>
+    <string msgid="5912733858573823945" name="confirm_device_credential_password">"पासवर्ड प्रयोग गर्नुहोस्"</string>
     <string msgid="8038256446254964252" name="default_error_message">"अवैद्य इन्पुट"</string>
+    <string msgid="4776854077120974966" name="default_error_msg">"अज्ञात त्रुटि"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"पपअप विन्डो"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"ड्रपडाउन मेनु"</string>
     <string name="error_a11y_label">त्रुटि: अवैध छ</string>
     <string name="error_icon_content_description">त्रुटि</string>
     <string name="exposed_dropdown_menu_content_description">ड्रपडाउन मेनु देखाउनुहोस्</string>
+    <string msgid="1072308044213194243" name="fingerprint_dialog_touch_sensor">"फिंगरप्रिन्ट सेन्सरमा छुनुहोस्‌"</string>
+    <string msgid="8216738333501875566" name="fingerprint_error_hw_not_available">"फिंगरप्रिन्ट हार्डवेयर उपलब्ध छैन।"</string>
+    <string msgid="6306988885793029438" name="fingerprint_error_hw_not_present">"यो यन्त्रमा कुनै फिंगरप्रिन्ट सेन्सर छैन"</string>
+    <string msgid="7291787166416782245" name="fingerprint_error_lockout">"अत्यधिक पटक प्रयासहरू गरिए। कृपया पछि फेरि प्रयास गर्नुहोस्।"</string>
+    <string msgid="7520712796891883488" name="fingerprint_error_no_fingerprints">"कुनै पनि फिंगरप्रिन्ट दर्ता गरिएको छैन।"</string>
+    <string msgid="7627716295344353987" name="fingerprint_error_user_canceled">"प्रयोगकर्ताले फिंगरप्रिन्टसम्बन्धी कारबाही रद्द गर्नुभयो।"</string>
+    <string msgid="3873359464293253009" name="fingerprint_not_recognized">"पहिचान भएन"</string>
+    <string msgid="3791785319221634505" name="generic_error_no_device_credential">"कुनै पनि PIN, ढाँचा वा पासवर्ड सेट गरिएको छैन।"</string>
+    <string msgid="1807436368654974044" name="generic_error_no_keyguard">"यस यन्त्रमा PIN, ढाँचा वा पासवर्ड प्रयोग गर्न मिल्दैन।"</string>
+    <string msgid="7309881387583143581" name="generic_error_user_canceled">"प्रयोगकर्ताले प्रमाणीकरण सेवा रद्द गर्नुभयो।"</string>
     <string name="icon_content_description">संवादको आइकन</string>
     <string msgid="6827826412747255547" name="in_progress">"काम हुँदै छ"</string>
     <string msgid="7933458017204019916" name="indeterminate">"आंशिक रूपमा जाँच गरिएको"</string>

@@ -49,12 +49,24 @@
     <string name="clear_text_end_icon_content_description">Brisanje teksta</string>
     <string msgid="406453423630273620" name="close_drawer">"Zatvaranje izbornika za navigaciju"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Zatvaranje lista"</string>
+    <string msgid="5912733858573823945" name="confirm_device_credential_password">"Koristite zaporku"</string>
     <string msgid="8038256446254964252" name="default_error_message">"Nevažeći unos"</string>
+    <string msgid="4776854077120974966" name="default_error_msg">"Nepoznata pogreška"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Skočni prozor"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Padajući izbornik"</string>
     <string name="error_a11y_label">Pogreška: nije važeće</string>
     <string name="error_icon_content_description">Pogreška</string>
     <string name="exposed_dropdown_menu_content_description">Prikaži padajući izbornik</string>
+    <string msgid="1072308044213194243" name="fingerprint_dialog_touch_sensor">"Dodirnite senzor otiska prsta"</string>
+    <string msgid="8216738333501875566" name="fingerprint_error_hw_not_available">"Hardver za otisak prsta nije dostupan."</string>
+    <string msgid="6306988885793029438" name="fingerprint_error_hw_not_present">"Ovaj uređaj nema senzor otiska prsta"</string>
+    <string msgid="7291787166416782245" name="fingerprint_error_lockout">"Previše pokušaja. Pokušajte ponovno kasnije."</string>
+    <string msgid="7520712796891883488" name="fingerprint_error_no_fingerprints">"Nije registriran nijedan otisak prsta."</string>
+    <string msgid="7627716295344353987" name="fingerprint_error_user_canceled">"Radnju s otiskom prsta otkazao je korisnik."</string>
+    <string msgid="3873359464293253009" name="fingerprint_not_recognized">"Nije prepoznat"</string>
+    <string msgid="3791785319221634505" name="generic_error_no_device_credential">"Nisu postavljeni PIN, uzorak ni zaporka."</string>
+    <string msgid="1807436368654974044" name="generic_error_no_keyguard">"Ovaj uređaj ne podržava PIN, uzorak ili zaporku."</string>
+    <string msgid="7309881387583143581" name="generic_error_user_canceled">"Korisnik je otkazao autentifikaciju."</string>
     <string name="icon_content_description">Ikona dijaloga</string>
     <string msgid="6827826412747255547" name="in_progress">"U tijeku"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Djelomično potvrđeno"</string>

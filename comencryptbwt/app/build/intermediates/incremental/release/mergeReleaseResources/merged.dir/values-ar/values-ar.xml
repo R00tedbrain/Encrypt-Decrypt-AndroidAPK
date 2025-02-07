@@ -52,12 +52,24 @@
     <string name="clear_text_end_icon_content_description">محو النص</string>
     <string msgid="406453423630273620" name="close_drawer">"إغلاق قائمة التنقل"</string>
     <string msgid="7573152094250666567" name="close_sheet">"إغلاق الورقة"</string>
+    <string msgid="5912733858573823945" name="confirm_device_credential_password">"استخدام كلمة المرور"</string>
     <string msgid="8038256446254964252" name="default_error_message">"إدخال غير صالح"</string>
+    <string msgid="4776854077120974966" name="default_error_msg">"خطأ غير معروف"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"نافذة منبثقة"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"قائمة منسدلة"</string>
     <string name="error_a11y_label">خطأ: غير صالح</string>
     <string name="error_icon_content_description">خطأ</string>
     <string name="exposed_dropdown_menu_content_description">عرض القائمة المنسدلة</string>
+    <string msgid="1072308044213194243" name="fingerprint_dialog_touch_sensor">"المس زر استشعار بصمة الإصبع"</string>
+    <string msgid="8216738333501875566" name="fingerprint_error_hw_not_available">"جهاز بصمة الإصبع غير متاح."</string>
+    <string msgid="6306988885793029438" name="fingerprint_error_hw_not_present">"لا يحتوي هذا الجهاز على جهاز استشعار بصمات الأصابع."</string>
+    <string msgid="7291787166416782245" name="fingerprint_error_lockout">"تم إجراء محاولات كثيرة جدًا. يُرجى المحاولة مرة أخرى لاحقًا."</string>
+    <string msgid="7520712796891883488" name="fingerprint_error_no_fingerprints">"ليست هناك بصمات إصبع مسجَّلة."</string>
+    <string msgid="7627716295344353987" name="fingerprint_error_user_canceled">"تم إلغاء تشغيل بصمة الإصبع بواسطة المستخدم."</string>
+    <string msgid="3873359464293253009" name="fingerprint_not_recognized">"لم يتم التعرف عليها."</string>
+    <string msgid="3791785319221634505" name="generic_error_no_device_credential">"لم يتم ضبط رقم تعريف شخصي أو نقش أو كلمة مرور."</string>
+    <string msgid="1807436368654974044" name="generic_error_no_keyguard">"هذا الجهاز لا يتيح استخدام رقم تعريف شخصي أو نقش أو كلمة مرور."</string>
+    <string msgid="7309881387583143581" name="generic_error_user_canceled">"ألغى المستخدم المصادقة."</string>
     <string name="icon_content_description">رمز مربع الحوار</string>
     <string msgid="6827826412747255547" name="in_progress">"قيد التقدم"</string>
     <string msgid="7933458017204019916" name="indeterminate">"تم وضع علامة في المربّع بشكل جزئي"</string>

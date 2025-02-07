@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.encrypt.bwt.app-mergeDebugResources-60:/values-id/values-id.xml",
+            "outputFile": "com.encrypt.bwt.app-mergeDebugResources-61:/values-id/values-id.xml",
             "map": [
                 {
                     "source": "/home/f4ckbr4in/.gradle/caches/8.9/transforms/cb5c2563a5402b83da07b69a0ebca0f6/transformed/zxing-android-embedded-4.3.0/res/values-id/values-id.xml",

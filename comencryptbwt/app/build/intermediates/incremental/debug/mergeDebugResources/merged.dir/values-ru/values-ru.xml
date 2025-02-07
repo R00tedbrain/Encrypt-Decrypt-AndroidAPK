@@ -50,12 +50,24 @@
     <string name="clear_text_end_icon_content_description">Очистить текстовое поле</string>
     <string msgid="406453423630273620" name="close_drawer">"Закрыть меню навигации"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Закрыть лист"</string>
+    <string msgid="5912733858573823945" name="confirm_device_credential_password">"Ввести пароль"</string>
     <string msgid="8038256446254964252" name="default_error_message">"Неправильный ввод"</string>
+    <string msgid="4776854077120974966" name="default_error_msg">"Неизвестная ошибка"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Всплывающее окно"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Раскрывающееся меню"</string>
     <string name="error_a11y_label">Ошибка: недопустимое значение</string>
     <string name="error_icon_content_description">Ошибка</string>
     <string name="exposed_dropdown_menu_content_description">Показать раскрывающееся меню</string>
+    <string msgid="1072308044213194243" name="fingerprint_dialog_touch_sensor">"Коснитесь сканера отпечатков."</string>
+    <string msgid="8216738333501875566" name="fingerprint_error_hw_not_available">"Сканер отпечатков пальцев недоступен."</string>
+    <string msgid="6306988885793029438" name="fingerprint_error_hw_not_present">"На этом устройстве нет сканера отпечатков пальцев."</string>
+    <string msgid="7291787166416782245" name="fingerprint_error_lockout">"Слишком много попыток входа. Попробуйте ещё раз позже."</string>
+    <string msgid="7520712796891883488" name="fingerprint_error_no_fingerprints">"Нет отсканированных отпечатков пальцев."</string>
+    <string msgid="7627716295344353987" name="fingerprint_error_user_canceled">"Операция с отпечатком пальца отменена пользователем."</string>
+    <string msgid="3873359464293253009" name="fingerprint_not_recognized">"Не распознано"</string>
+    <string msgid="3791785319221634505" name="generic_error_no_device_credential">"Не заданы PIN-код, пароль или графический ключ."</string>
+    <string msgid="1807436368654974044" name="generic_error_no_keyguard">"На этом устройстве не поддерживаются PIN-код, графический ключ и пароль."</string>
+    <string msgid="7309881387583143581" name="generic_error_user_canceled">"Аутентификация отменена пользователем."</string>
     <string name="icon_content_description">Значок диалогового окна</string>
     <string msgid="6827826412747255547" name="in_progress">"Выполняется"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Отмечено частично"</string>

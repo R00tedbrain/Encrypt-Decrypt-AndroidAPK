@@ -50,12 +50,24 @@
     <string name="clear_text_end_icon_content_description">Vymazať text</string>
     <string msgid="406453423630273620" name="close_drawer">"Zavrieť navigačnú ponuku"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Zavrieť hárok"</string>
+    <string msgid="5912733858573823945" name="confirm_device_credential_password">"Použiť heslo"</string>
     <string msgid="8038256446254964252" name="default_error_message">"Neplatný vstup"</string>
+    <string msgid="4776854077120974966" name="default_error_msg">"Neznáma chyba"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Vyskakovacie okno"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Rozbaľovacia ponuka"</string>
     <string name="error_a11y_label">Chyba: neplatné</string>
     <string name="error_icon_content_description">Chyba</string>
     <string name="exposed_dropdown_menu_content_description">Zobraziť rozbaľovaciu ponuku</string>
+    <string msgid="1072308044213194243" name="fingerprint_dialog_touch_sensor">"Dotknite sa senzora odtlačkov prstov"</string>
+    <string msgid="8216738333501875566" name="fingerprint_error_hw_not_available">"Hardvér na snímanie odtlačku prsta nie je k dispozícii."</string>
+    <string msgid="6306988885793029438" name="fingerprint_error_hw_not_present">"Toto zariadenie nemá senzor odtlačkov prstov"</string>
+    <string msgid="7291787166416782245" name="fingerprint_error_lockout">"Príliš veľa pokusov. Skúste to znova neskôr."</string>
+    <string msgid="7520712796891883488" name="fingerprint_error_no_fingerprints">"Neregistrovali ste žiadne odtlačky prstov."</string>
+    <string msgid="7627716295344353987" name="fingerprint_error_user_canceled">"Overenie odtlačku prsta zrušil používateľ."</string>
+    <string msgid="3873359464293253009" name="fingerprint_not_recognized">"Nerozpoznané"</string>
+    <string msgid="3791785319221634505" name="generic_error_no_device_credential">"Nie je nastavený kód PIN, vzor ani heslo."</string>
+    <string msgid="1807436368654974044" name="generic_error_no_keyguard">"Toto zariadenie nepodporuje PIN, vzor ani heslo."</string>
+    <string msgid="7309881387583143581" name="generic_error_user_canceled">"Overenie zrušil používateľ."</string>
     <string name="icon_content_description">Ikona dialógového okna</string>
     <string msgid="6827826412747255547" name="in_progress">"Prebieha"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Čiastočne začiarknuté"</string>

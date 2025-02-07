@@ -48,12 +48,24 @@
     <string name="clear_text_end_icon_content_description">Xóa văn bản</string>
     <string msgid="406453423630273620" name="close_drawer">"Đóng trình đơn điều hướng"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Đóng trang tính"</string>
+    <string msgid="5912733858573823945" name="confirm_device_credential_password">"Dùng mật khẩu"</string>
     <string msgid="8038256446254964252" name="default_error_message">"Giá trị nhập không hợp lệ"</string>
+    <string msgid="4776854077120974966" name="default_error_msg">"Lỗi không xác định"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Cửa sổ bật lên"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Trình đơn thả xuống"</string>
     <string name="error_a11y_label">Lỗi: không hợp lệ</string>
     <string name="error_icon_content_description">Lỗi</string>
     <string name="exposed_dropdown_menu_content_description">Hiển thị menu thả xuống</string>
+    <string msgid="1072308044213194243" name="fingerprint_dialog_touch_sensor">"Chạm vào cảm biến vân tay"</string>
+    <string msgid="8216738333501875566" name="fingerprint_error_hw_not_available">"Không dùng được phần cứng vân tay."</string>
+    <string msgid="6306988885793029438" name="fingerprint_error_hw_not_present">"Thiết bị này không có cảm biến vân tay"</string>
+    <string msgid="7291787166416782245" name="fingerprint_error_lockout">"Bạn đã thử quá nhiều lần. Vui lòng thử lại sau."</string>
+    <string msgid="7520712796891883488" name="fingerprint_error_no_fingerprints">"Chưa đăng ký vân tay."</string>
+    <string msgid="7627716295344353987" name="fingerprint_error_user_canceled">"Người dùng đã hủy thao tác dùng dấu vân tay."</string>
+    <string msgid="3873359464293253009" name="fingerprint_not_recognized">"Không nhận dạng được"</string>
+    <string msgid="3791785319221634505" name="generic_error_no_device_credential">"Chưa đặt mã PIN, hình mở khóa hoặc mật khẩu."</string>
+    <string msgid="1807436368654974044" name="generic_error_no_keyguard">"Thiết bị này không hỗ trợ mã PIN, hình mở khóa hoặc mật khẩu."</string>
+    <string msgid="7309881387583143581" name="generic_error_user_canceled">"Người dùng đã hủy thao tác xác thực."</string>
     <string name="icon_content_description">Biểu tượng hộp thoại</string>
     <string msgid="6827826412747255547" name="in_progress">"Đang thực hiện"</string>
     <string msgid="7933458017204019916" name="indeterminate">"Đã kiểm tra một phần"</string>
