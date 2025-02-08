@@ -1,9 +1,9 @@
-# Encrypt-DecrypT Android APK :shield: :lock:
+# SecureYourChats :shield: :lock:
 
 [![Ver el Video](https://img.youtube.com/vi/CzAeRdajT2I/0.jpg)](https://www.youtube.com/watch?v=CzAeRdajT2I "Título del Video")
 
 
-Welcome to Encrypt-DecrypT!
+Welcome to SecuerYourChats!
 This app allows you to encrypt and decrypt text and files using a variety of algorithms, quickly and easily. It also includes advanced Accessibility features to detect selected or copied text from the clipboard, offering a seamless encryption/decryption flow.
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
