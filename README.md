@@ -2,6 +2,8 @@
 
 [![Ver el Video](https://img.youtube.com/vi/CzAeRdajT2I/0.jpg)](https://www.youtube.com/watch?v=CzAeRdajT2I "Título del Video")
 
+If want contact any question / colaboration 
+session ID : 0512735a4650ffaae7203dfaeff8439f4e88688cd1d4e2218884f1ec9b4eed7a7a
 
 Welcome to SecuerYourChats!
 This app allows you to encrypt and decrypt text and files using a variety of algorithms, quickly and easily. It also includes advanced Accessibility features to detect selected or copied text from the clipboard, offering a seamless encryption/decryption flow.
