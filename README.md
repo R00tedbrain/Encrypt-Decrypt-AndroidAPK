@@ -102,3 +102,13 @@ Or download the latest APK from the [Releases Section](https://github.com/R00ted
 
 Este proyecto está licenciado bajo la [Licencia Pública General de GNU versión 3](https://www.gnu.org/licenses/gpl-3.0.es.html). 
 Por favor, revisa el archivo [LICENSE](./LICENSE) para obtener más información.
+
+
+<p align="center">
+  <a href="https://example.com/donate" target="_blank">
+    <img src="https://img.shields.io/badge/Donate-USDT-green?style=for-the-badge&logo=tether" alt="Donate USDT">
+  </a>
+  <br>
+  <small>If you want, donate or leave a compliment. My USDT Wallet: <code>TNufycDSRfWbQs79e2Fjyy2DKrNiySN95m</code></small>
+</p>
+
